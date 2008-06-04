@@ -1,0 +1,10 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}}
+{% load archive_extras %}}
+{% block tytul %}Archiwum{% endblock %}
+{% block content %}
+<img src='/site_media/images/minus.jpg'> <a href=''>{{date_list|year}}</a><br>
+{% for d in date_list %}
+<p style='padding-left:20px;'><img src='/site_media/images/plus.jpg'> <a href='{{d|date:"m"}}/'>{{d|date:"F"}}</a></p>
+{% endfor %}
+{% endblock %}

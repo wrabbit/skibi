@@ -1,0 +1,28 @@
+
+{% if has_account %}Posiadasz juz konto w systemie{% endif %}
+{% if created %} Na podany adres e-mail zostal wyslany link aktywacyjny.Sprawdz poczte i aktywuj konto {% endif %}
+
+{% if form %}
+<form method="post" action="." >
+<table border=1 rules='none' class='table'>
+    <th colspan =2>Utworz konto</th>
+    <tr><td><br></td></tr>
+	<tr><td>login:</td><td> {{ form.username}}
+    {% if form.username.errors %}<div id='img_error'>{{ form.username.errors|join:", " }}</div>{% endif %}</td>
+    </tr>
+	<tr><td>e-mail:</td><td> {{ form.email}}
+    {% if form.email.errors %}<div id='img_error'>{{ form.email.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+    <td>password:</td><td>{{ form.password1}}
+    {% if form.password1.errors %}<div id='img_error'>{{ form.password1.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+    <td>confirm password:</td><td> {{ form.password2}}
+    {% if  form.password2 %}<div id='img_error'>{{ form.password2.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+	<td><input type='submit' value='Wyslij' id="addcomm"></form></td>
+	</tr>
+</table>
+</form>
+{% endif %}
+
+

@@ -1,0 +1,44 @@
+{% extends 'base_tresc.html' %}
+{% load extras %}
+{% block content %}
+<script type="text/javascript" src="/site_media/js/ajax.js"></script>
+ <div class='breadcrumbs'>
+ <table width=560 border=0>
+ <tr>
+ <td width='460'><b>{{object.imie}} {{object.nazwisko}}</b></td>
+ <td><a href="/add/uwagi/{{object.id}}/" style='color:white;text-decoration:underline;' >{% if perms.e_dziennik.add_uwagi %} Dodaj uwagę {%endif%}</a></td>
+ </tr></table></div>
+ 
+ {% if object.get_uwagi_all %}
+ {% for u in object.get_uwagi_all %}
+ <ul class="messagelist">
+	<table width=590 border=0 id='mini'>
+	<tr><td></td><td width=400 > Wystawił: <b>{{ u.wystawil.get_full_name}}</b></td><td width=150 >{{u.dodano}}</td>
+	</tr>
+	<tr><td id='{{u.typ|sprawdz_typ }}'></td><td colspan=4><font color='#000000'>{{u.tresc}}</font></td>
+	
+	<tr>
+	<td></td><td align='left'>
+	{% if u.potwierdzenie %}-- potwierdzona --{% else %} -- niepotwierdzona -- {%endif%}
+	{{u|monit}} 
+	</td>
+	<td align='right'>
+	{% if perms.e_dziennik.change_uwagi %}
+	        <a href="/edit/uwagi/{{object.id}}/{{u.id}}/">edytuj</a>&nbsp &nbsp
+		    <a href="/del/{{u.id}}/{{object.id}}/">usuń</a>&nbsp &nbsp
+	{% else %}	
+	    {% if not u.potwierdzenie %}
+			<form><input id ='{{u.id}}' type='checkbox' name='potwierdz' onclick="sprawdz_dane({{u.id}});"> potwierdź</form>
+        {% endif %}
+	{% endif %}		
+		</td></tr>
+	</table>
+ </ul>
+{% endfor %}
+{% else %}
+   <ul class="emptylist">
+		<li><br>&nbsp;-- brak uwag--<br>&nbsp;</li>
+		
+   </ul>
+{% endif %} 
+{% endblock %}

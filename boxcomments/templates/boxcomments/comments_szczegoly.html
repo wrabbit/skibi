@@ -1,0 +1,12 @@
+{% extends "base_tresc.html" %}
+{% load extras %}{% load fbc %}
+
+{% block content %}
+
+		<h2 class="title"><b>{{object.title_com}}</b></h1>
+	    <p id='mini'><small><b>{{object.author}}</b> {{object.date}}</small></p>
+		<div class="entry">
+		{{object.text|fbc}}
+        </div>
+
+{% endblock %}

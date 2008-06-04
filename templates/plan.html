@@ -1,0 +1,29 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+{% block plan %}
+
+ <!-- wyswietl liste ocen w danej klasie (profil wych.)--> 
+
+    <br><form name = 'plan' method='POST' action='/'>
+	<table border=1 class='table_oceny' id='blink1' cellspacing='0' cellpadding='0' width='850'>
+	<th class='user'>Lp.</th>
+	<th class='user' width='150'>#</th>
+    {% for num,day in weekdays.items %}
+	<th class='user' width='200'>{{day}}</th>
+	{% endfor %}
+	{% for g in godziny %}
+	<tr height='60'>
+	    <td align='center' style="cursor:default;" onmouseover="this.style.backgroundColor='inherit';" onmouseout="this.style.backgroundColor='inherit';">{{g.id}}</td>
+		<td align='center' style="cursor:default;"onmouseover="this.style.backgroundColor='inherit';" onmouseout="this.style.backgroundColor='inherit';">{{g.poczatek|tnij}}-{{g.koniec|tnij}}</td>
+	{% for num,day in weekdays.items %}
+	   
+	    <td align='center' {% if user|sprawdz_klase:klasa %} onclick="window.location.href='{{g.id}}/{{num}}/{% if num|pobierz_lekcje:g.id%}edit{%endif%}'" {% endif %} onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FEFEF2';">{{num|pobierz_lekcje:g.id}}</td>
+	    
+	{% endfor %}
+	</tr>
+	{% endfor %}
+	
+    </table>
+</form>
+	
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "pages/body.html" %}
+{% load i18n %}
+{% block content %}
+<br />
+<form action="." method="post" name="profile"><input type="hidden" value="a" name="a" />
+
+<div class="content">
+          <table>
+
+<tr class="rowA">
+	<td class="first" style="width:25%;"><b>{% trans "Allow messages from users" %}</b></td>
+	<td><input type="checkbox" id="id_use_messages" class="vCheckboxField" name="use_messages"{% if p.use_messages %} checked="checked"{% endif %} /></td>
+</tr>
+</table></div>
+<br />
+<div class="box" style="text-align:center;"><input type="submit" value="{% trans "Save" %}" /><br /></div>
+</form><br /><br /><br />
+
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+{% block form_w %}
+<script>
+function sprawdz_login(login)
+{
+if (login == ""){
+$("errors").innerHTML="<font face=arial size=1 color='blue'>Pole login jest wymagane.</font>";
+}
+else{
+var url= "/accounts/validate/login/"+login+"/";
+/*
+var myAjax = new Ajax.Updater(
+					{success: 'errors'}, 
+					url, 
+					{
+						method: 'get',
+						onFailure: reportError
+					});
+*/
+var myAjax = new Ajax.Request(
+					url, 
+					{
+						method: 'get',
+						onComplete: showResponse
+					});
+}
+	var myGlobalHandlers = {
+		onCreate: function(){
+			Element.show('systemWorking');
+		},
+
+		onComplete: function() {
+			if(Ajax.activeRequestCount == 0){
+				Element.hide('systemWorking');
+			}
+		}
+	};
+
+        Ajax.Responders.register(myGlobalHandlers);
+}
+function reportError(request)
+	{
+		alert('Sorry. There was an error.');
+	}
+function showResponse(originalRequest)
+	{
+		//put returned XML in the textarea
+		if (originalRequest.responseText=='exist') $("errors").innerHTML="<font face=arial size=1 color='blue'>Podany login już istnieje,proszę wybrać inny.</font>";
+		else $("errors").innerHTML="<font face=arial size=1 color='green'>Login jest dostępny.</font>";	
+	}	
+	
+	
+</script>
+
+<!-- Formularz - Tworzenie listy przedmiotow-->
+{% if Listaprzedmiotow %}
+
+<form method="post" action="." >
+<table border=1 rules='none' class='table' cellspacing='1' cellpadding='0'>
+    <th colspan =2>{{tytul}} przedmiot</th>
+    <tr><td><br></td></tr>
+	<tr><td>Nazwa przedmiotu:</td><td> {{ Listaprzedmiotow.nazwa}}
+    {% if Listaprzedmiotow.nazwa.errors %}<div id='img_error'>{{ Listaprzedmiotow.nazwa.errors|join:", " }}</div>{% endif %}</td>
+    </tr>
+	<tr><td>Skrót:</td><td> {{ Listaprzedmiotow.skrot}}
+    {% if Listaprzedmiotow.skrot.errors %}<div id='img_error'>{{ Listaprzedmiotow.skrot.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+    <td>Nauczyciel:</td><td>{{ Listaprzedmiotow.nauczyciel}}
+    {% if Listaprzedmiotow.nauczyciel.errors %}<div id='img_error'>{{ Listaprzedmiotow.nauczyciel.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+    <td>Obowiązkowy:</td><td> {{ Listaprzedmiotow.obowiazkowy }}
+    {% if Listaprzedmiotow.obowiazkowy %}<div id='img_error'>{{ Listaprzedmiotow.obowiazkowy.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+	{% if perms.e_dziennik.change_przedmioty %}
+	    {% if user|sprawdz_klase:klasa %}
+	        <td><input type="submit" value='Zapisz' id="addcomm"></td>
+		{% else %}
+		    </form><td><form action ='/{{klasa}}/Lista przedmiotow/'><input type='submit' value='Powrot' id="addcomm"></form></td>
+	    {% endif %}
+	{% endif %}
+	{% if del %}
+	    {% if perms.e_dziennik.delete_przedmioty %}
+		    {% if user|sprawdz_klase:klasa %}
+		          <td><a href ='/{{klasa}}/Lista przedmiotow/del/{{r_id}}'><img src='/site_media/images/icon_deletelink.gif' border=0> Usun</a></td></tr>{% endif %}
+            {% endif %}
+	{% endif %}
+</table>
+
+</form>
+{% endif %}
+<!-- Formularz - Tworzenie listy uczniow-->
+
+
+{% if Listauczniow %}
+
+</form><form enctype="multipart/form-data" method="post" action="." >
+<table border=1 rules='none' class='table' cellspacing='1' cellpadding='0'>
+
+    <th colspan =3>{{tytul}} ucznia </th>
+    <tr><td><br></td></tr>
+	<td width=130>Imię:</label></td><td> {{ Listauczniow.imie}}
+    {% if Listauczniow.imie.errors %}<div id='img_error'>{{ Listauczniow.imie.errors|join:", " }}</div>{% endif %}</td>
+    <div style='margin-top:50px;margin-left:380px;position:absolute'>
+	{% if rekord.get_photo_url %}
+	<a href='/site_media/{{rekord.get_photo_url}}' rel="lightbox"><img src='/site_media/files/photos/mini/{{ rekord.get_photo_url|podziel }}' border=0></a>
+    {% else %}
+	{% endif %}
+	</p></tr><tr>
+	<td>Nazwisko:</td><td> {{ Listauczniow.nazwisko}}
+    {% if Listauczniow.nazwisko.errors %}<div id='img_error'>{{ Listauczniow.nazwisko.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+    <td>Numer:</td><td>{{ Listauczniow.numer }}
+    {% if Listauczniow.numer.errors %}<div id='img_error'>{{ Listauczniow.numer.errors|join:", " }}</div>{% endif %}</td>
+    </tr><tr>
+	<td>Płeć:</td><td> {{ Listauczniow.plec }}
+    {% if Listauczniow.plec.errors %}<div id='img_error'>{{ Listauczniow.plec.errors|join:", " }}</div>{% endif %}</td>
+	</tr><tr>
+	<td>Kod,poczta:</td><td> {{ Listauczniow.kod}}
+    {% if Listauczniow.kod.errors %}<div id='img_error'>{{ Listauczniow.kod.errors|join:", " }}</div>{% endif %}</td>
+	</tr><tr>
+	<td>Miejscowość:</td><td> {{ Listauczniow.miejscowosc }}
+    {% if Listauczniow.miejscowosc.errors %}<div id='img_error'>{{ Listauczniow.miejscowosc.errors|join:", " }}</div>{% endif %}</td>
+	</tr><tr>
+	<td>Ulica:</td><td> {{ Listauczniow.ulica }}
+    {% if Listauczniow.ulica.errors %}<div id='img_error'>{{ Listauczniow.ulica.errors|join:", " }}</div>{% endif %}</td>
+	</tr><tr>
+	</tr><tr>
+	<td>Dom / lokal:</td><td> {{ Listauczniow.dom }}
+    {% if Listauczniow.dom.errors %}<div id='img_error'>{{ Listauczniow.dom.errors|join:", " }}</div>{% endif %}</td>  
+	</tr><tr>
+	<td>Telefon:</td><td>{{ Listauczniow.telefon }}
+    {% if Listauczniow.telefon.errors %}{{ Listauczniow.telefon.errors|join:", " }}</div>{% endif %}</td>  
+	</tr><tr>
+	<td>Uwagi:</td><td>{{ Listauczniow.info }}
+    {% if Listauczniow.info.errors %}<div id='img_error'>{{ Listauczniow.info.errors|join:", " }}{% endif %}</td>  
+	</tr><tr>
+	<td>Zdjęcie:</td><td>{{ Listauczniow.photo }}{{ Listauczniow.photo_file }}
+    {% if Listauczniow.photo.errors %}<div id='img_error'>{{ Listauczniow.photo.errors|join:", " }}{% endif %}</td>  
+	</tr><tr>
+	<td>Grupa:</td><td>{{ Listauczniow.grupa }}
+    {% if Listauczniow.grupa.errors %}<div id='img_error'>{{ Listauczniow.grupa.errors|join:", " }}{% endif %}</td>  
+	</tr><tr>
+	{% if perms.e_dziennik.change_uczniowie_tmp %}
+	    {% if user|sprawdz_klase:klasa %}
+	        <td><input type="submit" value='Zapisz' id="addcomm"></td>
+	    {% else %}
+	        </form><td><form action ='/{{klasa}}/Lista uczniow/'><input type='submit' value='Powrot' id="addcomm"></form></td>{% endif %}
+	{% if del %}
+	    {% if perms.e_dziennik.delete_uczniowie_tmp %}
+		    {% if user|sprawdz_klase:klasa %}
+		        <td><img src='/site_media/images/icon_deletelink.gif' border=0> <a href ='/{{klasa}}/Lista uczniow/del/{{r_id}}'>Usuń</a></td></tr>{% endif %}
+            {% endif %}
+	    {% endif %}
+	{% endif %}
+</table>
+
+</form>
+{% endif %}
+
+{% if User %}
+
+<table border=1  rules='none' class='table' cellspacing='1' cellpadding='0'width='350px'>
+    <th colspan =2>{{tytul}} opiekuna</th>
+    <tr>
+	 <td>Uczeń:</td><td> {{dane_ucznia}}</td>
+	 <tr><td colspan=2><hr></td></tr>
+    </tr><tr><td><br></td></tr>
+	<tr>
+	<form method = 'post' action = ".">
+	<td>Login:</td><td>{% if not rod_id %}<input type='text' name='username' size='30' onblur='sprawdz_login(this.value)'>
+	<span id='systemWorking' style='display:none'><img src='/site_media/images/ajax-loader.gif' /></span>
+	{% else %}{{User.username}}{% endif %}
+    <div id='errors'></div>{% if User.username.errors %}<div id='img_error'>{{User.username.errors|join:", " }}{% endif %}</div></div></td>
+
+    </tr><tr>
+    <td>Imię:</td><td>{{ User.first_name }}
+    {% if User.first_name.errors %}<div id='img_error'>{{ User.first_name.errors|join:", " }}{% endif %}</div></td>
+    </tr><tr>
+    <td>Nazwisko:</td><td>{{ User.last_name }}
+    {% if User.last_name %}<div id='img_error'>{{ User.first_name.errors|join:", " }}{% endif %}</div></td>
+    </tr><tr>
+    <td>E-mail:</td><td>{{User.email}}
+    {% if User.email.errors %}<div id='img_error'>{{ User.email.errors|join:", " }}{% endif %}</div></td>
+    </tr><tr>
+	<td>Miejscowość:</td><td> {{ User.miejscowosc }}
+    {% if User.miejscowosc.errors %}<div id='img_error'>{{ User.miejscowosc.errors|join:", " }}</div>{% endif %}</td>
+	</tr><tr>
+	<td>Ulica:</td><td> {{ User.ulica }}
+    {% if User.ulica.errors %}<div id='img_error'>{{ User.ulica.errors|join:", " }}</div>{% endif %}</td>
+	</tr><tr>
+	</tr><tr>
+	<td>Dom / lokal:</td><td> {{ User.dom }}
+    {% if User.dom.errors %}<div id='img_error'>{{ User.dom.errors|join:", " }}</div>{% endif %}</td>  
+	</tr><tr>
+	  <td>Telefon kom.:</td><td> {{ User.mobile_phone}}
+    {% if User.mobile_phone %}<div id='img_error'>{{ User.mobile_phone.errors|join:", " }}{% endif %}</div></td>
+    </tr><tr>
+    <td>Hasło:</td><td>{% if rod_id %}<input type='text' name='password' size='30'
+	onFocus="this.value = '' ">
+	{% else %}{{User.password}}{% endif %}
+    {% if User.password.errors %}<div id='img_error'>{{ User.password.errors|join:", "}}{% endif %}</div></td>
+    </tr><tr>
+    <td>Aktywny:</td><td> {{ User.is_active }}
+    {% if User.is_active.errors %}<div id='img_error'>{{ User.is_active.errors|join:", "}}{% endif %}</div></td>
+    </tr>
+	<tr><td><input type="submit" value='Zapisz' id='addcomm'></td>
+    {% if del %}
+	<td><img src='/site_media/images/icon_deletelink.gif' border=0> <a href ='/{{klasa}}/User/del/{{rod_id}}'>Usuń</a></td></tr>
+    {% endif %}
+	</table>
+</form>
+{% endif %}
+{% endblock %}
+
+{% block opcje %}
+<h3 class="title">Dodatkowe opcje</h3>
+<div class="content">
+	<ul>
+    {% if brak_r %}
+	    <li><img src='/site_media/images/icon_addlink.gif' border=0> <a href='/{{klasa}}/User/add/{{r_id}}'>Dodaj opiekuna</a></li>
+	{% endif %}
+	{% if rodzic %}
+	    {% for rod in rodzic %}
+	    <li><img src='/site_media/images/icon_changelink.gif' border=0> <a href ='/{{klasa}}/User/edit_r/{{rod.id}}/{{r_id}}'> Edytuj opiekuna</a>
+        {% endfor %}
+	{% endif %}
+	</ul>	
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

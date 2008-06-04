@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName e-dziennik
+AuthUserFile C:/xampp/htdocs/wisz_dziennik/e_szkola/htpasswd/.htpasswd
+require valid user

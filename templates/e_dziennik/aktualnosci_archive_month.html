@@ -1,0 +1,11 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}}
+{% block tytul %}Archiwum{% endblock %}
+{% block content %}
+<img src='/site_media/images/minus.jpg'> <a href='/archives/{{month|date:"Y"}}'>{{month|date:"Y"}}</a><br>
+<p style='padding-left:20px;'><img src='/site_media/images/minus.jpg'> <a href=''>{{month|date:"F"}}</a></p>
+{% for o in object_list %}
+<p style='padding-left:40px;margin-top:10px;border-top:1px solid #E4E4E4;border-bottom:1px solid #E4E4E4;'><img src='/site_media/images/bul.gif'> <a href='/news/{{o.id}}' style='color:black;' >[{{o.news_date|date:"Y-m-d"}}] {{o.news_title}}</a></p>
+
+{% endfor %}
+{% endblock %}

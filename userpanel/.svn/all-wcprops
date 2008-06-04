@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/88/trunk/diamandas/userpanel
+END
+URLconf.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/86/trunk/diamandas/userpanel/URLconf.py
+END
+userMiddleware.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/86/trunk/diamandas/userpanel/userMiddleware.py
+END
+views.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/86/trunk/diamandas/userpanel/views.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/86/trunk/diamandas/userpanel/__init__.py
+END
+make-messages.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/86/trunk/diamandas/userpanel/make-messages.py
+END
+models.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/86/trunk/diamandas/userpanel/models.py
+END

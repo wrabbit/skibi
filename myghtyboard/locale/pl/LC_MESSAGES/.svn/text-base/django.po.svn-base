@@ -1,0 +1,573 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MyghtyBoard\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-02 15:57+0200\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:5
+msgid "Category Name"
+msgstr "Nazwa Kategorii"
+
+#: models.py:6
+msgid "Order"
+msgstr "Kolejność"
+
+#: models.py:8
+msgid "Category"
+msgstr "Kategoria"
+
+#: models.py:9
+msgid "Categories"
+msgstr "Kategorie"
+
+#: models.py:19
+msgid "Forum Category"
+msgstr "Kategoria dla Forum"
+
+#: models.py:20
+msgid "Forum Name"
+msgstr "Nazwa Forum"
+
+#: models.py:21
+msgid "Forum Description"
+msgstr "Opis"
+
+#: models.py:22 models.py:55 templates/myghtyboard/category_list.html:21
+msgid "Topics"
+msgstr "Tematów"
+
+#: models.py:23 models.py:46 models.py:70
+#: templates/myghtyboard/category_list.html:22
+#: templates/myghtyboard/mytopics_list.html:12
+#: templates/myghtyboard/topics_list.html:16
+msgid "Posts"
+msgstr "Postów"
+
+#: models.py:24 models.py:47 templates/myghtyboard/category_list.html:23
+#: templates/myghtyboard/mytopics_list.html:13
+#: templates/myghtyboard/topics_list.html:17
+msgid "Last Post"
+msgstr "Ostatni Post"
+
+#: models.py:27 models.py:43 templates/myghtyboard/category_list.html:20
+msgid "Forum"
+msgstr "Forum"
+
+#: models.py:28
+msgid "Forums"
+msgstr "Fora"
+
+#: models.py:36
+msgid "Stats"
+msgstr "Statystyka"
+
+#: models.py:44
+msgid "Topic Title"
+msgstr "Tytuł Tematu"
+
+#: models.py:45 models.py:65 templates/myghtyboard/add_post.html:45
+#: templates/myghtyboard/mytopics_list.html:11
+#: templates/myghtyboard/post_list.html:37
+#: templates/myghtyboard/topics_list.html:15
+msgid "Author"
+msgstr "Autor"
+
+#: models.py:49
+msgid "Pagination Page"
+msgstr "Ostatnia strona stronicowania"
+
+#: models.py:54 templates/myghtyboard/mytopics_list.html:10
+#: templates/myghtyboard/topics_list.html:14
+msgid "Topic"
+msgstr "Temat"
+
+#: models.py:63 models.py:69 templates/myghtyboard/add_post.html:44
+#: templates/myghtyboard/post_list.html:36
+msgid "Post"
+msgstr "Post"
+
+#: views.py:52
+msgid "User Topics"
+msgstr "Tematy Użytkownika"
+
+#: views.py:55 views.py:72 views.py:98
+msgid "You aren't logged in"
+msgstr "Nie jesteś zalogowany"
+
+#: views.py:69 templates/myghtyboard/add_post.html:61
+#: templates/myghtyboard/add_topic.html:56
+#: templates/myghtyboard/category_list.html:7
+#: templates/myghtyboard/edit_post.html:37
+#: templates/myghtyboard/move_topic.html:21
+#: templates/myghtyboard/mytopics_list.html:42
+msgid "Last Active Topics"
+msgstr "Ostatnie Aktywne Tematy"
+
+#: views.py:93
+msgid "User Posts in Latest Topics"
+msgstr "Posty użytkownika w ostatnio aktywnych tematach"
+
+#: views.py:158
+msgid "You can't add topics"
+msgstr "Nie możesz dodawać nowych tematów"
+
+#: views.py:166 views.py:238
+msgid "Topic is closed"
+msgstr "Temat zamknięty"
+
+#: views.py:172
+msgid "You can't post after your post"
+msgstr "Nie możesz dodawać postów po sobie"
+
+#: views.py:224
+msgid " wrote"
+msgstr " napisał"
+
+#: views.py:231
+msgid "You can't add posts"
+msgstr "Nie możesz dodawać postów"
+
+#: views.py:265
+msgid "You can't edit this post"
+msgstr "Nie możesz edytować tego posta"
+
+#: views.py:276 views.py:290 views.py:309 views.py:319
+#: templates/myghtyboard/category_list.html:53
+msgid "You aren't a moderator"
+msgstr "Nie jesteś moderatorem"
+
+#: views.py:299
+msgid "Topic Moved"
+msgstr "Temat Przeniesiony"
+
+#: views.py:301
+msgid "This topic has been moved to another forum. To see the topic follow"
+msgstr ""
+"Ten temat został przeniesiony do innego forum. By przejść do tematu kliknij"
+
+#: views.py:301
+msgid "this link"
+msgstr "w ten link"
+
+#: views.py:301
+msgid "Forum Staff"
+msgstr "Obsługa Forum"
+
+#: views.py:329
+msgid "You aren't a moderator and you aren't logged in"
+msgstr "Nie jesteś moderatorem i nie jesteś zalogowany"
+
+#: templates/myghtyboard/add_post.html:4
+#: templates/myghtyboard/add_topic.html:3
+#: templates/myghtyboard/category_list.html:4
+#: templates/myghtyboard/edit_post.html:3
+#: templates/myghtyboard/move_topic.html:3
+#: templates/myghtyboard/mytopics_list.html:3
+#: templates/myghtyboard/post_list.html:6
+#: templates/myghtyboard/topics_list.html:6
+msgid "Home"
+msgstr "Strona Główna"
+
+#: templates/myghtyboard/add_post.html:4
+#: templates/myghtyboard/add_topic.html:3
+#: templates/myghtyboard/category_list.html:4
+#: templates/myghtyboard/edit_post.html:3
+#: templates/myghtyboard/move_topic.html:3
+#: templates/myghtyboard/mytopics_list.html:3
+#: templates/myghtyboard/mytopics_list.html:5
+#: templates/myghtyboard/post_list.html:6
+#: templates/myghtyboard/topics_list.html:6
+msgid "Forum Index"
+msgstr "Indeks Forum"
+
+#: templates/myghtyboard/add_post.html:6
+#: templates/myghtyboard/add_post.html:35
+#: templates/myghtyboard/post_list.html:28
+#: templates/myghtyboard/post_list.html:75
+#: templates/myghtyboard/post_list.html:145
+msgid "Add Post"
+msgstr "Dodaj Post"
+
+#: templates/myghtyboard/add_post.html:11
+#: templates/myghtyboard/add_topic.html:17
+msgid "Text"
+msgstr "Treść"
+
+#: templates/myghtyboard/add_post.html:13
+#: templates/myghtyboard/add_topic.html:19
+#: templates/myghtyboard/edit_post.html:11
+#: templates/myghtyboard/post_list.html:128
+msgid "Bold"
+msgstr "Pogrubienie"
+
+#: templates/myghtyboard/add_post.html:14
+#: templates/myghtyboard/add_topic.html:20
+#: templates/myghtyboard/edit_post.html:12
+#: templates/myghtyboard/post_list.html:129
+msgid "Italic"
+msgstr "Kursywa"
+
+#: templates/myghtyboard/add_post.html:15
+#: templates/myghtyboard/add_post.html:16
+#: templates/myghtyboard/add_topic.html:21
+#: templates/myghtyboard/add_topic.html:22
+#: templates/myghtyboard/edit_post.html:13
+#: templates/myghtyboard/edit_post.html:14
+#: templates/myghtyboard/post_list.html:130
+#: templates/myghtyboard/post_list.html:131
+msgid "Underline"
+msgstr "Podkreślenie"
+
+#: templates/myghtyboard/add_post.html:17
+#: templates/myghtyboard/add_topic.html:23
+#: templates/myghtyboard/edit_post.html:15
+#: templates/myghtyboard/post_list.html:132
+msgid "Blockquote"
+msgstr "Blok wcięcia"
+
+#: templates/myghtyboard/add_post.html:18
+#: templates/myghtyboard/add_topic.html:24
+#: templates/myghtyboard/edit_post.html:16
+#: templates/myghtyboard/post_list.html:133
+msgid "Code Here"
+msgstr "Tutaj Kod"
+
+#: templates/myghtyboard/add_post.html:18
+#: templates/myghtyboard/add_topic.html:24
+#: templates/myghtyboard/edit_post.html:16
+#: templates/myghtyboard/post_list.html:133
+msgid "Code"
+msgstr "Kod"
+
+#: templates/myghtyboard/add_post.html:27
+#: templates/myghtyboard/add_topic.html:33
+#: templates/myghtyboard/post_list.html:142
+msgid "Place code snippets inside [code][/code] tags !"
+msgstr "Kod umieszczaj pomiędzy tagami [code][/code]"
+
+#: templates/myghtyboard/add_post.html:37
+#: templates/myghtyboard/add_topic.html:52
+#: templates/myghtyboard/edit_post.html:33
+#: templates/myghtyboard/post_list.html:147
+msgid "Allowed HTML Tags"
+msgstr "Dozwolone tagi HTML"
+
+#: templates/myghtyboard/add_post.html:39
+msgid "Last 10 posts from topic"
+msgstr "Ostatnie 10 postów"
+
+#: templates/myghtyboard/add_post.html:59
+#: templates/myghtyboard/add_topic.html:54
+#: templates/myghtyboard/category_list.html:5
+#: templates/myghtyboard/edit_post.html:35
+#: templates/myghtyboard/move_topic.html:19
+#: templates/myghtyboard/mytopics_list.html:40
+#: templates/myghtyboard/post_list.html:8
+#: templates/myghtyboard/topics_list.html:7
+msgid "Options"
+msgstr "Opcje"
+
+#: templates/myghtyboard/add_post.html:62
+#: templates/myghtyboard/add_topic.html:57
+#: templates/myghtyboard/category_list.html:8
+#: templates/myghtyboard/edit_post.html:38
+#: templates/myghtyboard/move_topic.html:22
+#: templates/myghtyboard/mytopics_list.html:43
+msgid "My Topics"
+msgstr "Moje Tematy"
+
+#: templates/myghtyboard/add_post.html:63
+#: templates/myghtyboard/add_topic.html:58
+#: templates/myghtyboard/category_list.html:9
+#: templates/myghtyboard/edit_post.html:39
+#: templates/myghtyboard/move_topic.html:23
+#: templates/myghtyboard/mytopics_list.html:44
+msgid "My Posts"
+msgstr "Moje Posty"
+
+#: templates/myghtyboard/add_topic.html:8
+#: templates/myghtyboard/add_topic.html:50
+msgid "Add Topic"
+msgstr "Dodaj Temat"
+
+#: templates/myghtyboard/add_topic.html:13
+msgid "Title"
+msgstr "Tytuł"
+
+#: templates/myghtyboard/add_topic.html:38
+msgid "Sticky"
+msgstr "Przyklejony"
+
+#: templates/myghtyboard/add_topic.html:42
+msgid "Global"
+msgstr "Globalny"
+
+#: templates/myghtyboard/category_list.html:41
+#: templates/myghtyboard/post_list.html:104
+#: templates/myghtyboard/topics_list.html:84
+msgid "You can post new Topics"
+msgstr "Możesz dodawać nowe Tematy"
+
+#: templates/myghtyboard/category_list.html:43
+#: templates/myghtyboard/post_list.html:106
+#: templates/myghtyboard/topics_list.html:86
+msgid "You can't post new Topics"
+msgstr "Nie możesz dodawać nowych Tematów"
+
+#: templates/myghtyboard/category_list.html:46
+#: templates/myghtyboard/post_list.html:110
+#: templates/myghtyboard/topics_list.html:89
+msgid "You can post new Posts"
+msgstr "Możesz dodawać nowe Posty"
+
+#: templates/myghtyboard/category_list.html:48
+#: templates/myghtyboard/post_list.html:112
+#: templates/myghtyboard/post_list.html:115
+#: templates/myghtyboard/topics_list.html:91
+msgid "You can't post new Posts"
+msgstr "Nie możesz dodawać nowych postów"
+
+#: templates/myghtyboard/category_list.html:51
+msgid "You are a Moderator"
+msgstr "Jesteś moderatorem"
+
+#: templates/myghtyboard/edit_post.html:6
+msgid "Edit Post"
+msgstr "Edytuj Post"
+
+#: templates/myghtyboard/edit_post.html:31
+msgid "Save Changes"
+msgstr "Zapisz Zmiany"
+
+#: templates/myghtyboard/move_topic.html:7
+#: templates/myghtyboard/move_topic.html:16
+#: templates/myghtyboard/topics_list.html:48
+msgid "Move Topic"
+msgstr "Przenieś Temat"
+
+#: templates/myghtyboard/move_topic.html:8
+msgid "Select a forum to which the topic "
+msgstr "Wybierz forum do którego temat "
+
+#: templates/myghtyboard/move_topic.html:8
+msgid "should be moved"
+msgstr "powinien być przeniesiony"
+
+#: templates/myghtyboard/post_list.html:10
+#: templates/myghtyboard/post_list.html:82
+msgid "First Page"
+msgstr "Pierwsza Główna"
+
+#: templates/myghtyboard/post_list.html:15
+#: templates/myghtyboard/post_list.html:87
+msgid "Previous Page"
+msgstr "Poprzednia strona"
+
+#: templates/myghtyboard/post_list.html:19
+#: templates/myghtyboard/post_list.html:91
+msgid "Next Page"
+msgstr "Następna Strona"
+
+#: templates/myghtyboard/post_list.html:24
+#: templates/myghtyboard/post_list.html:96
+msgid "Last Page"
+msgstr "Ostatnia Strona"
+
+#: templates/myghtyboard/post_list.html:44
+msgid "Reply with quote"
+msgstr "Cytuj"
+
+#: templates/myghtyboard/post_list.html:50
+#: templates/myghtyboard/post_list.html:55
+msgid "Edit this post"
+msgstr "Edytuj ten post"
+
+#: templates/myghtyboard/post_list.html:59
+msgid "Delete This Post?"
+msgstr "Skasować ten post?"
+
+#: templates/myghtyboard/post_list.html:59
+msgid "Delete this post"
+msgstr "Skasować post"
+
+#: templates/myghtyboard/post_list.html:64
+msgid "Send Message"
+msgstr "Wyślij Wiadomość"
+
+#: templates/myghtyboard/post_list.html:118
+msgid "You can moderate this Topic"
+msgstr "Możesz moderować ten Temat"
+
+#: templates/myghtyboard/post_list.html:120
+msgid "You can't moderate this Topic"
+msgstr "Nie możesz moderować tego Tematu"
+
+#: templates/myghtyboard/post_list.html:126
+msgid "Quick Post"
+msgstr "Szybki Post"
+
+#: templates/myghtyboard/topics_list.html:4
+#: templates/myghtyboard/topics_list.html:5
+msgid "Topics from"
+msgstr "Tematy z"
+
+#: templates/myghtyboard/topics_list.html:7
+#: templates/myghtyboard/topics_list.html:78
+msgid "Add New Topic"
+msgstr "Dodaj Nowy Temat"
+
+#: templates/myghtyboard/topics_list.html:18
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/myghtyboard/topics_list.html:41
+msgid "Delete this Topic and all Posts?"
+msgstr "Skasować Temat i wszystkie jego posty?"
+
+#: templates/myghtyboard/topics_list.html:41
+msgid "Delete Topic"
+msgstr "Skasuj Temat"
+
+#: templates/myghtyboard/topics_list.html:43
+msgid "Open This Topic?"
+msgstr "Otworzyć Temat?"
+
+#: templates/myghtyboard/topics_list.html:43
+msgid "Unlock Topic"
+msgstr "Otwórz Temat"
+
+#: templates/myghtyboard/topics_list.html:45
+msgid "Close This Topic?"
+msgstr "Zamknąć Temat?"
+
+#: templates/myghtyboard/topics_list.html:45
+msgid "Lock Topic"
+msgstr "Zamknij Temat"
+
+#: templates/myghtyboard/topics_list.html:59
+msgid "Latest Topics"
+msgstr "Najnowsze Tematy"
+
+#: templates/myghtyboard/topics_list.html:64
+msgid "Newer Topics"
+msgstr "Nowsze Tematy"
+
+#: templates/myghtyboard/topics_list.html:68
+msgid "Older Topics"
+msgstr "Starsze Tematy"
+
+#: templates/myghtyboard/topics_list.html:73
+msgid "Oldest Topics"
+msgstr "Najstarsze Tematy"
+
+#: templates/myghtyboard/topics_list.html:94
+msgid "You can moderate this Topics"
+msgstr "Możesz moderować ten Temat"
+
+#: templates/myghtyboard/topics_list.html:96
+msgid "You can't moderate this Topics"
+msgstr "Nie możeszesz moderować tego Tematu"
+
+#~ msgid "Permission Denied"
+#~ msgstr "Brak Uprawnień"
+
+#~ msgid "User Profile"
+#~ msgstr "Profil"
+
+#~ msgid "Text from the image"
+#~ msgstr "Tekst z grafiki"
+
+#~ msgid "(Use CAPITAL letters)"
+#~ msgstr "(Użyj DUŻYCH liter)"
+
+#~ msgid "Enter Correct Captcha Text"
+#~ msgstr "Podaj poprawny tekst z grafiki"
+
+#~ msgid "News"
+#~ msgstr "Wiadomości"
+
+#~ msgid "My Profile"
+#~ msgstr "Mój Profil"
+
+#~ msgid "Quick Links"
+#~ msgstr "Nawigacja"
+
+#~ msgid "Posts from"
+#~ msgstr "Posty z"
+
+#~ msgid "No such profile"
+#~ msgstr "Brak Profilu"
+
+#~ msgid "Public Email"
+#~ msgstr "Publiczny email"
+
+#~ msgid "Avatar"
+#~ msgstr "Awatar"
+
+#~ msgid "Theme"
+#~ msgstr "Skórka"
+
+#~ msgid "Signature"
+#~ msgstr "Podpis"
+
+#~ msgid "Log Out"
+#~ msgstr "Wyloguj"
+
+#~ msgid "User Posts"
+#~ msgstr "Posty Użytkownika"
+
+#~ msgid "Registration Error"
+#~ msgstr "Błąd rejestracji"
+
+#~ msgid "REGISTER FORM"
+#~ msgstr "REJESTRACJA"
+
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgid "required, more than 3 chars<br />letters or numbers"
+#~ msgstr "wymagany, więcej niż 3 znaki. Dozwolone liczby i litery"
+
+#~ msgid "Password"
+#~ msgstr "Hasło"
+
+#~ msgid "required, more than 4 chars<br />letters or numbers"
+#~ msgstr "wymagane, więcej niż 4 znaki, liczby i litery"
+
+#~ msgid "Password Again"
+#~ msgstr "Hasło Ponownie"
+
+#~ msgid "required, enter the same password"
+#~ msgstr "wymagane, podaj to samo hasło"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "required, your email addres"
+#~ msgstr "wymagany"
+
+#~ msgid "Register My"
+#~ msgstr "Zarejestruj mnie"
+
+#~ msgid "Login Error - bad login and/or password"
+#~ msgstr "Błąd logowania - zły login i/lub hasło"
+
+#~ msgid "Register"
+#~ msgstr "Rejestruj"
+
+#~ msgid "Send a Private Message"
+#~ msgstr "Wyślij Wiadomość"
+
+#~ msgid "Subject"
+#~ msgstr "Temat"

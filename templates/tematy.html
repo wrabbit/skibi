@@ -1,0 +1,112 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+{% block content %}
+<script type="text/javascript">
+function getObjInnerText(obj){
+if (document.all) { // IE;
+return obj.innerText;
+}
+else{
+if (obj.textContent)
+{
+return obj.textContent;
+}
+else
+alert("Error: This application does not support your browser. Try again using IE or Firefox.");
+}
+} 
+
+function make_window(akcja,klasa,godzina,id,obj) {
+
+
+if(akcja!='close'){
+
+var curleft = sprawdzLeft(obj);
+var curtop = sprawdzTop(obj);
+
+document.getElementById('okienko2').style.left = curleft+0+'px';
+document.getElementById('okienko2').style.top = curtop+-200+'px';
+document.getElementById('okienko2').style.display = 'block';
+
+
+document.getElementById("tresc").value=getObjInnerText(document.getElementById(id))
+document.getElementById("okienko2").style.display = 'block';
+
+document.getElementById("zmienna").value = klasa;
+document.getElementById("zmienna1").value = godzina;
+document.getElementById("zmienna2").value = id;
+document.getElementById("tresc").focus(); 
+}
+else {
+document.getElementById("okienko2").style.display = 'none';
+}
+}
+
+</script>
+
+
+<style type='text/css'>
+#okienko2 {
+display: none;
+}
+#okienko3 {
+display: none;
+}
+</style>
+
+<div id='okienko3'>
+<form>
+<table><tr><td>
+<select name='year' style='width:80px;' onchange="wczytaj(this.value,this.form.month.value)">
+<option>2007</option>
+<option>2008</option>
+<option>2009</option>
+</select></td>
+<td><select name='month' style='width:80px;' onchange="wczytaj(this.form.year.value,this.value)">
+<option value=1>Styczeń</option><option=2>Luty</option><option=3>Marzec</option><option=4>Kwiecień</option>
+<option value=5>Maj</option><option value=6>Czerwiec</option><option=7>Lipiec</option>
+<option value=8>Sierpień</option><option value=9>Wrzesień</option><option value=10>Październik</option>
+<option value=11>Listopad</option><option value=12>Grudzień</option>
+</select></td></tr></table>
+</form>
+<center><span id='kal'>{{"2008"|create_calendar:"3"}}</span></center>
+<span style="float:right; margin-right:20px;margin-bottom:10px; cursor: pointer; text-decoration: underline" onclick="calendar('close',this)">Anuluj</span>
+</div>
+
+<div id='okienko2'>
+<table border=0 id='blink' width='320' >
+<form method='POST' action='{% if data %}?date={{data}}{% endif %}'>
+<b>Podaj treść:</b><br>
+<textarea name="tresc" id="tresc" rows="5" cols="40"></textarea>
+<input type='hidden' name='klasa' id='zmienna'>
+<input type='hidden' name='godzina' id='zmienna1'>
+<input type='hidden' name='data' id='zmienna2'>
+<input type='submit' value='zapisz'><input type='button' value='wyczyść' onclick="this.form.tresc.value=''">
+<!--<span style="float:right; margin-right:40px;margin-bottom:10px; cursor: pointer; text-decoration: underline" onclick="submit()">Zapisz</span>-->
+</form>
+</table>
+<span style="float:right; margin-right:20px;margin-bottom:10px; cursor: pointer; text-decoration: underline" onclick="make_window('close')">Anuluj</span>
+</div>
+<p style='float:right'><img src='/site_media/images/icon_calendar.gif'/> <a href="javascript:calendar('open',this,250,20)">Wybierz datę</a></p><br>
+    {% for day in tydzien %}
+	{% for num,name in day.items %}
+	{% if dzien|porownaj:name %} <font color='red'> {% endif %}<u> {{name}} </u></font>
+	<table border=1 class='table_oceny' id='blink1' cellspacing='0' cellpadding='0' width='600'>
+	<th class='user'>Lp.</th>
+	<th class='user'>Godzina</th>
+	<th class='user' width='150'>Przedmiot</th>
+	<th class='user' width='400'>Temat</th>
+	{% for p in num|przetworz_plan:klasa %}
+	<tr>
+	<td style="cursor:default;" onmouseover="this.style.backgroundColor='inherit';" onmouseout="this.style.backgroundColor='inherit';">{{p.godzina.id}}</td>
+	<td style="cursor:default;" onmouseover="this.style.backgroundColor='inherit';" onmouseout="this.style.backgroundColor='inherit';">{{p.godzina.poczatek|tnij}}-{{p.godzina.koniec|tnij}}</td>
+	<td style="cursor:default;" onmouseover="this.style.backgroundColor='inherit';" onmouseout="this.style.backgroundColor='inherit';">{{p.przedmiot}}</td><td height='30px' id='{{klasa}}|{{p.godzina.id}}|{{name|data}}' 
+	onclick="make_window('open',{{klasa}},{{p.godzina.id}},this.id,this)" onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FEFEF2';">
+	{{ p.godzina.id|pobierz_temat:name}}</td>
+	</tr>
+	{% endfor %}
+    </table><br>
+	{% endfor %}
+	{% endfor %}
+	
+{% endblock %}

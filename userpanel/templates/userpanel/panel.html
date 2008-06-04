@@ -1,0 +1,22 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% block content %}
+
+<table cellspacing='1' border=1 rules='none' width='70%' bgcolor='#EEEEEE'>
+<th colspan=2 class='user1'><b>{% trans "User Panel" %}</b></th>
+
+<tr><td>
+	<ul style='list-style:none;'>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href='/wyloguj'>{% trans 'Logout' %}</b></a></li>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href="/user/uprawnienia/">{% trans "My Permissions" %}</b></a></li>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href='/{{klasa}}/password_change/' >{% trans 'Change Password' %}</b></a></li>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href="/user/userlist/">{% trans "User List" %}</b></a></li>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href="mailto:{{admin_mail}}">{% trans "Contact Site Admin" %}</b></a></li>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href="/cal">{% trans "Event Calendar" %}</b></a></li>
+	<li><img src='/site_media/images/img12.gif' border=0> <a href="/user/theme">{% trans "Change Theme" %}</b></a></li>
+	</ul>
+	</td>
+</tr>
+</table>
+{% endblock %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/user/">{% trans "User Panel" %}</a>{% endblock %}

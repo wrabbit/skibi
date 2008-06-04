@@ -1,0 +1,29 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% block content %}
+          <table class='table_user'cellspacing='1'>
+            <tr>
+              <th class='user1'><strong>{% trans "Login" %}</strong></th>
+			  <th class='user1'><strong>{% trans "First name" %}</strong></th>
+			  <th class='user1'><strong>{% trans "Last name" %}</strong></th>
+              <th class='user1'><strong>{% trans "Actions" %}</strong></th>
+            </tr>
+            {% for u in object_list %}
+            <tr class="{% cycle rowA,rowB %}"> 
+              <td class="first"><strong>{{ u.username }}</strong>
+			  <td class="first">{{ u.first_name }}</td>
+			  <td class="first">{{ u.last_name }}</td>
+              <td><a href="/user/pmessage/{{ u.username }}/">{% trans "Send Message" %}</a></td>
+            </tr>
+	    {% endfor %}
+          </table>
+
+{% if has_previous %}
+<div class="box" style="text-align:center;">
+<h3><a href="/user/userlist/?page={{ previous }}">Poprzednia Strona</a></h3>
+{% endif %}
+{% if has_next %}
+<h3><a href="/user/userlist/?page={{ next }}">Następna Strona</a></h3>
+{% endif %}
+</div>
+{% endblock %}

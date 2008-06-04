@@ -1,0 +1,39 @@
+{% extends 'base_tresc.html' %}
+{% block content %}
+
+<div class="strony">
+{% if has_previous %}
+    &lsaquo; <a href="/{{user.id}}/historia/?page={{previous}}">Poprzednie</a>
+{% endif %}
+{% if has_next %}
+	<a href="/{{user.id}}/historia/?page={{next}}">Następne</a> &rsaquo; 
+{% endif %}
+</div>
+
+<table border=0  id='nb_ucznia' cellspacing='1' cellpadding='0'>
+<tr>
+    <th>Lp.</th><th>Data</th><th>Request URL</th><th>Adres IP</th><th>Przeglądarka</th>
+</tr>
+
+{% for l in object_list %}
+<tr bgcolor="{% cycle #E6E6FA,#DCDCDC %}">
+    <td>{{forloop.counter}}</td>
+	<td>{{l.date}}</td>
+	<td width='150'>{{l.request_url}}</td>
+	<td>{{l.client_address}}</td>
+	<td>{{l.browser_info}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<div class="strony">
+{% if has_previous %}
+    &lsaquo; <a href="/{{user.id}}/historia/?page={{previous}}">Poprzednie</a>
+{% endif %}
+{% if has_next %}
+	<a href="/{{user.id}}/historia/?page={{next}}">Następne</a> &rsaquo; 
+{% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+﻿{% extends "base_tresc.html" %}
+{% block content %}
+
+
+
+<form method="post" action=".">
+<table border=0 rules='none' class='table_user'>
+<th colspan=2 class='user1'>Oceny<a href="/{{klasa}}/sprawdz_msg" id='odsun'>Sprawdź wiadomości</a></th>
+<tr><td><br></td></tr>
+<tr>
+{% for field in form %}
+    <td id='mini'>
+	<label for="{{ field.label }}"><b>{{ field.label_tag }}</b>
+	{% if field.field.required %}<span class="requireds">*</span>{% endif %}</label>
+	{% if field.help_text %}<br>{{ field.help_text }}{% endif %}
+	</td>
+    <td>{{ field }}{% if field.errors %}<div id='img_error'>{{ field.errors|join:", "}}</div></td>{% endif %}
+	
+</tr>
+{% endfor %}
+<tr><td><input type="submit" value="Wyslij wiadomosc" id="addcomm"></td></tr>
+</table></form>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,27 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Password change' %}{% endblock %}
+
+{% block content %}
+
+<p id='mini'>{% trans "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly." %}</p>
+
+<table cellspacing='1' bgcolor='#EEEEEE'>
+<form action="" method="post">
+<th colspan=3 class='user1'><b>{% trans 'Password change' %}</b?</th>
+<tr><td><br></td></tr>
+
+<tr><td id='mini'><b>{% trans 'Old password:' %}</b></td>
+<td>{{ form.old_password }}{% if form.old_password.errors %}<br><div id='img_error'>{{ form.old_password.errors|join:","}}</div>{% endif %}</td></tr>
+
+<tr><td id='mini'><b>{% trans 'New password:' %}</b></td>
+<td>{{ form.new_password1 }}{% if form.new_password1.errors %}<div id='img_error'>{{ form.new_password1.errors|join:","}}</div>{% endif %}</td></tr>
+
+<tr><td id='mini'><b>{% trans 'Confirm password:' %}</b></td>
+<td>{{ form.new_password2 }}{% if form.new_password2.errors %}<div id='img_error'>{{ form.new_password2.errors|join:","}}</div>{% endif %}</td></tr>
+
+<tr><td><input type="submit" value="{% trans 'Change my password' %}" id="addcomm" ></td></tr>
+</form>
+</table>
+{% endblock %}

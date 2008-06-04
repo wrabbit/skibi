@@ -1,0 +1,13 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% block tytul %}{{params.header}}{% endblock %}
+{% block content %}
+
+			    <form id="switchform">
+		        <select name="switchcontrol" size="1" onChange="chooseStyle(this.options[this.selectedIndex].value, 60)">
+		        <option value="none" selected="selected">{% trans "Default" %}</option>
+		        <option value="green-theme">{% trans "Green" %}</option>
+				<option value="green2-theme">{% trans "Green other" %}</option>
+		        </select>
+		        </form>
+{% endblock %}

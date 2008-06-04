@@ -1,0 +1,34 @@
+#imgheader {
+	position:relative;
+	float:left;
+	clear:left;
+	width:455px;
+	height:80px;
+	line-height:200%;
+	background-color: #666666;
+	font-size:17px;
+	font-weight:normal;
+	color:white;
+	font-family:verdana;
+	text-align:center;
+	margin-left:64px;
+	letter-spacing:0.5px;
+	margin-top:5px;
+}
+
+#content_main {
+	position:relative;
+	float:left;
+	width:400px;
+	margin-left:80px;
+	margin-top:0px;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+#logo {
+	position:relative;
+	width:100%;
+	height:80px;
+	text-align:center;
+	margin-left:10px;
+}

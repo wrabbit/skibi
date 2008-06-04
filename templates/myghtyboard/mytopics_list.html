@@ -1,0 +1,46 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/forum/">{% trans "Forum Index" %}</a>{% endblock %}
+{% block content %}
+<h2><a id='mini' style='text-decoration:underline;' href="/forum/">{% trans "Forum Index" %}</a></h2>
+<div class="content">
+          <table cellspacing='1' border=1 rules='none' width='100%'>
+            <tr>
+              <th class='user1'></th>
+              <th class='user1'><strong>{% trans "Topic" %}</strong></th>
+              <th class='user1'><strong>{% trans "Author" %}</strong></th>
+              <th class='user1'><strong>{% trans "Posts" %}</strong></th>
+              <th class='user1'><strong>{% trans "Last Post" %}</strong></th>
+            </tr>
+           {% for topic in topics %}
+            <tr class="{% cycle rowA,rowB %}">
+           <td class="first">
+{% if topic.is_locked %}
+	<img src="/site_media/forum/lock.gif" alt="*" />
+{% else %}
+	{% if topic.is_sticky %}
+		<img src="/site_media/forum/stick.gif" alt="*" />
+	{% else %}
+		{% if topic.is_global %}
+			<img src="/site_media/forum/glob.gif" alt="*" />
+		{% else %}
+			<img src="/site_media/forum/school.gif" alt="*" />
+		{% endif%}
+	{% endif%}
+{% endif %}</td>
+              <td><b><a href="/forum/topic/{{ topic.topic_last_pagination_page }}/{{ topic.id }}/">{{ topic.topic_name }}</a></b></td>
+              <td id='mini'>{{ topic.topic_author }}</td>
+              <td id='mini'>{{ topic.topic_posts }}</td>
+              <td id='mini'>{{ topic.topic_lastpost }}</td>
+            </tr>
+	    {% endfor %}
+          </table>
+</div>
+{% endblock %}
+{% block right %}{% if perms.is_authenticated %}<h3>{% trans "Options" %}</h3>
+<ul>
+<li><img src='/site_media/images/img12.gif' border=0> <a href="/forum/lasttopics/">{% trans "Last Active Topics" %}</a></li>
+<li><img src='/site_media/images/img12.gif' border=0> <a href="/forum/mytopics/">{% trans "My Topics" %}</a></li>
+<li><img src='/site_media/images/img12.gif' border=0> <a href="/forum/myptopics/">{% trans "My Posts" %}</a></li>
+</ul>
+{% endif %}{% endblock %}

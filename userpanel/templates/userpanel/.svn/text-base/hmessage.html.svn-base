@@ -1,0 +1,19 @@
+{% extends "pages/body.html" %}
+{% load i18n %}
+{% block content %}
+<h2>{% trans "Change Forgotten Password" %}</h2><form action="." method="post">
+<div class="content">
+          <table>
+            <tr class="rowA">
+              <td class="first" style="width:25%;"><b>{% trans "Your Login" %}</b></td>
+              <td>{{ form.login }}{% if form.login.errors %}<br />*** {{ form.login.errors|join:", " }}{% endif %}</td>
+            </tr>
+            <tr class="rowB">
+              <td><b>{% trans "Your Registration Email" %}</b></td>
+              <td>{{ form.email }}{% if form.email.errors %}<br />*** {{ form.email.errors|join:", " }}{% endif %}</td>
+            </tr>
+          </table>
+</div>
+<div class="box"><br /><div style="text-align:center;"><input type="submit" value="{% trans "Reset Password" %}"></div><br /></div>
+</form>
+{% endblock %}

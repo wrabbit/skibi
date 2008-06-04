@@ -1,0 +1,36 @@
+{% extends 'base_tresc.html' %}
+{% block content %}
+
+
+  <div class='breadcrumbs'>
+  <table width=510 border='0'>
+  <tr>
+  <td>Masz {{hits}} wiadomości{{ object_list|pluralize:",i" }}</td>
+  <td width=110><a href="/{{klasa}}/message_send" style='color:white;text-decoration:underline;'>Wyślij wiadomość</a></td>
+  </tr></table>
+  </div>
+  {% if object_list %}
+  <ul class="messagelist">
+	{% for message in object_list %}
+		<table width=590 border=0>
+			<tr>
+			<td id='msg' ></td>
+			<td width=270 id='mini'><b>{{ message.sender}}<b></td>
+			<td width=130 id='mini'>{{message.dodano}}</td>
+			<td id='mini' colspan='2'> <a href ='/{{klasa}}/del/{{message.id}}'> Usun</a></td>
+			</tr>
+			<tr><td></td><td colspan=4 id='mini'><font color='#000000'>{{message.message}}</font></td>
+		    </table>
+	{% endfor %}
+  </ul>
+ <div class="strony">
+{% if has_previous %}&lsaquo; <a href="sprawdz_msg/?page={{previous}}">Poprzednie </a>{% endif %}
+{% if has_next %}<a href="sprawdz_msg/?page={{next}}">Nastepne</a> &rsaquo;{% endif %}
+ </div>
+  {% else %}
+   <ul class="emptylist">
+		<li><br>&nbsp;-- brak wiadomosci --<br>&nbsp;</li>
+		
+   </ul>
+   {% endif %} 
+{% endblock %}

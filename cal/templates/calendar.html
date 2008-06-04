@@ -1,0 +1,86 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+{% load i18n %}
+</head>
+{% block content %}
+  <table class="allCalendar">
+    <tr>
+      <td>
+        <table class="calendar" >
+          <tr>
+            <th><a href="?year={{ cal.prev.0 }}&month={{ cal.prev.1 }}">&laquo;</a></th>
+            <th colspan="5">{{ cal.getMonthHeader.0 }} {{ cal.getMonthHeader.1 }}</th>
+            <th><a href="?year={{ cal.next.0 }}&month={{ cal.next.1 }}">&raquo;</a></th>
+          </tr>
+          <tr>
+            {% for wk in cal.getWeekHeader %}
+              <th>{{ wk }}</th>
+            {% endfor %}
+          </tr>
+          {% for line in cal.getMonthCalendar %}
+          <tr>
+            {% for day in line %}
+              <td>
+                {% if day.1 %}
+                  <a href="?year={{ cal.curr.year }}&month={{ cal.curr.month }}&day={{ day.0 }}" style='text-decoration:underline;' >{{ day.0 }}</a>
+                {% else %}
+                  {% if day.0 %}
+                    {{ day.0 }}
+                  {% endif %}
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </table>  
+      </td>
+      <td>
+	  
+        <span class="eventHead">{% trans 'Events on the' %} {{ cal.day }}{{ cal.getDayName }}</span>
+        <form action="{{ url }}" method="post">
+          <table class='table_user' cellspacing='1' cellpadding='0' border='1' width='600px'>
+            <tr>
+              <th class='user1'>{% trans 'Name' %}</th>
+              <th class='user1'>{% trans 'When' %}</th>
+              <th class='user1'>{% trans 'Description' %}</th>
+              <th class='user1'>{% trans 'Action' %}</th>
+            </tr>
+            {% for event in cal.getDailyEvents %}
+              <tr>
+                <td><input name="name{{ forloop.counter }}" type="text" 
+                    value="{{ event.name }}" readonly size="15" maxlength="50"/></td>
+                <td><input name="when{{ forloop.counter }}" type="text" 
+                    value="{{ event.start.time }}" readonly size="8" maxlength="8"/></td>
+                <td><input name="desc{{ forloop.counter }}" type="text" 
+                    value="{{ event.desc }}" readonly size="30" maxlength="200"/></td>
+                <td>
+                  <input name="chgbutt{{ forloop.counter }}" type="button" value="Change"
+                      onclick="changeEvent(this, {{ forloop.counter }});" />
+                  <input name="rmbutt{{ forloop.counter }}" type="button" value="Remove" 
+                      onclick="deleteEvent(this, {{ forloop.counter }});" />
+                </td>
+              </tr>
+            {% endfor %}
+            <tr>
+              <td><input name="new_name" type="text" size="15" maxlength="50"/></td>
+              <td><input name="new_when" type="text" size="8" maxlength="8"/></td>
+              <td><input name="new_desc" type="text" size="30" maxlength="200"/></td>
+              <td><input type="button" value="Add" onclick="addEvent(this)" /> event to day 
+                  <input name="new_day" type="text" value="{{ cal.day }}" 
+                      size="2" maxlength="2"/>
+              </td>
+            </tr>
+          </table>
+          <input name="rowid" type="hidden" value=""/>
+          <input name="name" type="hidden" value=""/>
+          <input name="when" type="hidden" value=""/>
+          <input name="desc" type="hidden" value=""/>
+          <input name="year" type="hidden" value="{{ cal.curr.year }}"/>
+          <input name="month" type="hidden" value="{{ cal.curr.month }}"/>
+          <input name="day" type="hidden" value="{{ cal.day }}"/>
+        </form>
+      </td>
+    </tr>
+  </table>
+
+{% endblock %}

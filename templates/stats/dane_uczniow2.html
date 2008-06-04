@@ -1,0 +1,23 @@
+﻿{% extends "base_tresc.html" %}
+{% block content %}
+
+</form><form enctype="multipart/form-data" method="post" action=".">
+<table border=0 class='table_user'>
+    <th colspan=3 class='user1'>Wczytaj dane</th>
+    <tr><td><br></td></tr>
+	<tr><td id='mini'><label for="id_plik"><b>{{f.plik.label_tag}}</b></label></td><td> {{ f.plik }}{{ f.plik_file }}
+    {% if f.plik_file.errors %}<div id='img_error'>{{ f.plik_file.errors|join:", " }}</div>{% endif %}</td>
+    </tr>
+	<tr><td id='mini'><b>{{f.opis.label_tag}}</b></td><td> {{ f.opis}}
+    {% if f.opis.errors %}<div id='img_error'>{{ f.opis.errors|join:", " }}</div>{% endif %}</td>
+    </tr>
+    <tr><td><input type="submit" value='Zapisz' id="addcomm"></td></tr>
+</table>
+
+</form>
+
+
+{% endblock %}
+
+
+

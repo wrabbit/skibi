@@ -1,0 +1,14 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+
+
+{% block content %}
+{% if error %}
+<b><img src='/site_media/images/icon_error.gif'> {% trans 'Wystapil blad, wiadomosc nie zostala wyslana' %}</b></a>
+</form><form action ='{{path}}' ><input type='submit' value='Sproboj ponownie' id="addcomm"></form>
+{% else %}
+<b><img src='/site_media/images/icon_success.gif'> {% trans 'Wiadomosc wyslana' %}</b></a>
+<p id='mini'>{% trans 'Twoja wiadomosci zostala wyslana' %}</p>
+</form><form action ='{{path}}' ><input type='submit' value='Wyslij nastepna' id="addcomm"></form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+{% load ustawienia_extras %}
+{% block oceny %}
+<div id='naglowek'><h2>{{dziecko.get_full_name}}</h2></div>
+    <form name = 'oceny' method='POST' action='/'>
+	<table border=1 class='table_oceny' cellspacing='0' cellpadding='0' width='850'>
+	<th class='user' rowspan=2>Lp.</th>
+	<th class='user' rowspan=2>Przedmiot</th>
+    <th class='user' colspan='{{kolumny|length}}'>Oceny</th>
+	<tr>{% for k in kolumny %}<th class='user' width='40'>{{forloop.counter }}</th>{% endfor %}</tr>
+	{% for p in klasa_obj.get_przedmioty %}
+	<tr height='30'>
+	    <td>{{forloop.counter }}</td>
+		<td><b>{{p}}</b><br>n. {{p.nauczyciel.get_full_name}}</td>
+	{% for k in kolumny %}
+	
+	    <td align='center'><span style="cursor: pointer;" onmouseover="return overlib('{{p.id|waga:k}}');" onmouseout="return nd();">{{p.id|pob:k}}</span></td>
+
+	{% endfor %}
+	{% endfor %}
+	</tr>
+
+	
+	
+	
+    </table>
+</form>
+	
+{% endblock %}

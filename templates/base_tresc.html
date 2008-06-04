@@ -1,0 +1,292 @@
+{% extends "base.html" %}
+{% load extras %}
+{% load i18n %}
+<!--dziedziczone szablony -->
+{% block form_w %}{% endblock %}
+{% block oceny %}{% endblock %}
+{% block nieobecnosci %}{% endblock %}
+{% block plan %}{% endblock %}
+{% block wykresy %}{% endblock %}
+<!--end-->
+<!--dane przekazywane pomiedzy widokami:klasa(aktualna),klasy,przedmioty,user,-->
+{% block opcje_r %}
+<ul type='square'>
+<li><a href='/wyloguj'>{% trans 'Wyloguj' %}</a></li>
+
+<li><a href='/user' >{% trans 'Panel użytkownika' %}</a></li>
+</ul>
+
+{% endblock %}
+
+{% block opcje_c %}
+<span onclick="submitForm('pl')" style='margin-left:140px;cursor:pointer'><img src='/site_media/images/pl.png'></span>
+<span onclick="submitForm('en')" style='cursor:pointer;float:none;'><img src='/site_media/images/uk.png'></span>
+<br>
+{% trans 'Ostatnie logowanie' %}: {{last_login}} <br>
+{% trans 'Data przyłączenia' %}: {{user.date_joined}}
+<form action="/i18n/setlang/" method="post" name='lang' style='display:none'>
+<input name="next" type="hidden" value="/loged/?page=1" />
+<select id='lg' name="language" >
+{% for lang in LANGUAGES %}
+<option id='lg' value="{{ lang.0 }}">{{ lang.1 }}</option>
+{% endfor %}
+</select>
+</form>
+
+{% endblock %}
+
+{% block login %}{% if user.is_authenticated %}{{user.get_full_name}}{% endif %}{% endblock %}
+
+{% block dane %}
+    {% if klasy_w %}
+	<h3>Wychowawca:</h3>
+	<ul>	
+        {% for k in klasy_w %}	
+		   <li class="{{klasa|equal:k.id}}"><a href="/{{k.id}}">{{ k.numer }}{{k.litera}}</a></li>
+	    {% endfor %}
+	</ul>
+    {% endif %}
+	
+	{% if klasy_n %}
+	<h3>Nauczyciel:</h3>
+	<ul>
+    {% for k,v in klasy_n.items %}	
+        <li class="{{klasa|equal:k}}"><a href="/{{k}}">{{v}}</a></li>
+	    {% for p in przedmioty_n %}
+		    {% ifequal p.klasa.id k %}
+				| {{p.skrot}}
+		    {% endifequal %}
+	    {% endfor %}
+    {% endfor %}
+	</ul>
+    {% endif %}
+	
+	{% if dziecko %}
+	<div id='rodzic'>
+	<h3>Opiekun:</h3>
+	<ul>
+		   <li style="background: url(images/buddy.gif) no-repeat top left;"><a href="/{{dziecko.id}}">{{dziecko.get_full_name}} ({{dziecko.klasa}})</a></li>
+	</ul>
+	</div>
+    {% endif %}	
+	
+{% endblock %}
+<!--end-->
+
+
+<!-- MENU WYCHOWAWCY/NAUCZYCIELA -->
+{% block menu %}
+{% if user|sprawdz_grupe %}
+		<ul>
+			<li><a href="{% url e_dziennik.wych.wyswietl_oceny klasa %}">{% trans 'Oceny' %}</a></li>
+			<li><a href="/{{klasa}}/Nieobecnosci">{% trans 'Nieobecności' %}</a></li>
+			<li><a href="/{{klasa}}/uczniowie">{% trans 'Uwagi' %}</a></li>
+			<li><a href="/{{klasa}}/Tematy">{% trans 'Tematy zajęć' %}</a></li>
+			<li><a href="/{{klasa}}/Plan">{% trans 'Plan lekcji' %}</a></li>
+			<li><a href="/{{klasa}}/Lista uczniow">{% trans 'Lista uczniów' %}</a></li>
+			<li><a href="/{{klasa}}/Lista przedmiotow">{% trans 'Lista przedmiotów' %}</a></li>
+			<li><a href="/raporty">{% trans 'Raporty' %}</a></li>
+			<li><a href="/loged/?page=1">{% trans 'Aktualności' %}</a></li>	
+			<li><a href="/forum">{% trans 'Forum' %}</a></li>	
+		</ul>
+{% else %}
+<!-- MENU RODZICA -->
+		<ul>
+			<li><a href="/rod/{{dziecko.id}}/oceny">{% trans 'Oceny' %}</a></li>
+			<li><a href="/rod/nieobecnosci">{% trans 'Nieobecności' %}</a></li>
+			<li><a href="/{{dziecko.id}}/sprawdz/uwagi/">{% trans 'Uwagi' %}</a></li>
+			<li><a href="/{{klasa}}/Plan">{% trans 'Plan lekcji' %}</a></li>
+			<li><a href="/loged/?page=1">{% trans 'Aktualności' %}</a></li>	
+			<li><a href="/forum">{% trans 'Forum' %}</a></li>	
+		</ul>
+{% endif %}
+{% endblock %}
+
+{% block tytul %}{% if header %}{% blocktrans with header as header %} {{header}} {% endblocktrans %}{% endif %}{%endblock %}
+
+{% block naglowek %}
+{% if not com %}
+    <b>{% trans 'Klasa' %}:</b> {{klasa_obj.numer}}{{klasa_obj.litera}}
+	<b>|{% trans 'Wychowawca' %}:</b> {{klasa_obj.wychowawca.get_full_name}}
+{% endif %}
+{% if uczniowie %}
+<div id = 'linia'>
+<form method = 'post' action='.' id='linia'>
+
+
+	<b>|{% trans 'Przedmiot' %}:</b> <select name='przedmiot' onchange="this.form.submit()">
+	<option>------</option>
+	{% for p in przedmioty %}
+	<option value ='{{p.id}}' {% ifequal przedmiot.id p.id %} selected {% endifequal%} >{% blocktrans with p.nazwa as przedmiot%}{{przedmiot}}{% endblocktrans %} </option>
+	{% endfor %}
+	</select>
+	<input type='hidden' name='semestr' value = '{{semestr.id}}'>
+</form>	
+
+<form method = 'post' action='.' id='linia1'>
+	<b>|{% trans 'Semestr' %}:</b> <select name='semestr' onchange="this.form.submit()">
+	<option>------</option>
+	{% for s in semestry %}
+	<option value ='{{s.id}}' {% ifequal semestr.id s.id %} selected {% endifequal%}>{% blocktrans with s.numer as numer%}Oceny za semestr {{numer}}  {% endblocktrans %}</option>
+	{% endfor %}
+	</select>
+	<input type='hidden' name='przedmiot' value = '{{przedmiot.id}}'>
+</form>
+
+</div>
+
+    {% if przedmiot %}	
+	<table border=0 width='860px'>
+	<tr>
+    <td><h2>{{przedmiot.nazwa}} - {{przedmiot.nauczyciel.first_name}}
+	{{przedmiot.nauczyciel.last_name}} Semestr - {{semestr}}</h2></td>
+	{% if przedmiot|wf %}
+	<td valign='bottom' align='right'><form method ='post' action='.'>
+    <input type='radio' name='plec' value='Mezczyzna' onclick="this.form.submit()"/>{% trans ' chłopcy' %} &nbsp;&nbsp;
+	<input type='radio' name='plec' value='Kobieta' onclick="this.form.submit()"/>{% trans ' dziewczyny' %}
+	<input type='hidden' name='przedmiot' value = '{{przedmiot.id}}'>
+	<input type='hidden' name='semestr' value = '{{semestr.id}}'>
+    </form></td>
+	{% endif %}
+	</tr>
+	</table>
+	{% endif %}
+
+	{% endif %}
+{% endblock %}
+
+
+{% block stats %}<!-- STATS: Total: %(totTime).2f Python: %(pyTime).2f DB: %(dbTime).2f  -->{% endblock %}
+<<!--Blok odpowiedzialny za wyswietlanie poszczegolnych danych z bazy (dane pochodza z jednego widoku 'wyswietl')-->
+{% block content %}
+  {% if object_list %}
+	{% for new in object_list %}
+	<div class="post">
+		<h2 class="title">{{new.news_title}}</h1>
+	    <p class="byline"><small>{{new.news_date}}</small></p>
+		<div class="entry">
+		{{new.news_short}}
+		<!--{{new.news_text|skrot}}-->
+        </div><br>
+		<ul style='list-style-type:none;'>
+		<li class="meta"><a href="/news/{{new.id}}" class="more">{% trans 'Czytaj wiecej' %}</a></li>
+		<li class="meta" style='padding-left: 20px;'><a href="/com/{{ new.id }}/1/" class="comments">{% trans 'Komentarze' %} ({{new.id|lencom}})</a></li>
+		</ul>
+	</div><br><br>
+	{% endfor %}
+ <div class="strony">
+{% if has_previous %}&lsaquo; <a href="/loged/?page={{previous}}">{% trans 'Poprzednie' %}</a>{% endif %}
+{% if has_next %}&nbsp;<a href="/loged/?page={{next}}">{% trans 'Nastepne' %}</a> &rsaquo; {% endif %}
+ </div>
+ <center><a href='/archives' style='font-size:10px;'> [ ARCHIWUM ] </a></center>
+  {% else %}
+
+   {% endif %}
+   
+   
+   
+   
+{% if object %}
+{% if object.get_uczniowie %}
+	<table border=1 width='90%' class='table' id='blink' cellspacing='1' cellpadding='0'>
+	    <th width=50>Nr dz.</th><th>{% trans 'Imie' %}</th><th>{% trans 'Nazwisko' %}</th><th>{% trans 'Pozytywne' %}</th><th>{% trans 'Negatywne' %}</th>
+	   {% for u in object.get_uczniowie %}
+		<tr onclick="window.location.href='/{{u.id}}/sprawdz/uwagi/'" onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#E6E6FA';"><td>{{u.numer}}</td><td>{{u.imie}}</td><td>{{u.nazwisko}}</td>
+		<td align='center'>
+		
+		 {{u.get_uwagi_p}}</td><td align='center'>{{u.get_uwagi_n}}</td>
+		</tr>
+        {% endfor %}
+	   
+	</table>
+	{% endif %}
+{% endif %}
+
+
+	{% if Lista_przedmiotow %} <!-- wyswietl liste przedmiotow w danej klasie (profil wych.)-->      
+	<table border=1 width='600' class='table' id='blink' cellspacing='1' cellpadding='0'>
+
+	    <th>{% trans 'Nazwa' %}</th><th>{% trans 'Nauczyciel(grupa)' %}</th><th>{% trans 'Obowiązkowy' %}</th>
+	    {% for p in Lista_przedmiotow %}
+		<tr onclick="window.location.href='/{{klasa}}/Lista przedmiotow/edit/{{p.id}}'" onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#E6E6FA';">
+	    <td class='bold'>{{p.nazwa}}</b></td><td>{{p.nauczyciel}}</td><td style='padding-left:40px;'>{% if p.obowiazkowy %}<img src='/site_media/images/icon-yes.gif' border=0>{% else %}-{% endif %}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	<br>
+	{% if perms.e_dziennik.add_przedmioty %}
+	    {% if user|sprawdz_klase:klasa %}
+	       <img src='/site_media/images/icon_addlink.gif' border=0> <a href = '/{{klasa}}/Lista przedmiotow/add'>{% trans 'Dodaj nowy przedmiot' %}</a>{% endif %}
+        {% endif %}
+	{% endif %}
+	
+
+	{% if Lista_uczniow %} <!-- wyswietl liste uczniow w danej klasie (profil wych.)-->      
+	<table border=1 width='620' class='table' id='blink' cellspacing='1' cellpadding='0'>
+	    <th width=50>Nr dz.</th><th>{% trans 'Imię' %}</th><th>{% trans 'Nazwisko' %}</th><th>{% trans 'Utworzono' %}</th><th>{% trans 'Grupa językowa' %}</th><th>{% trans 'Login opiekuna' %}</th>
+	    {% for u in Lista_uczniow %}
+		<tr onclick="window.location.href='/{{klasa}}/Lista uczniow/edit/{{u.id}}'" onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#E6E6FA';"><td>{{u.numer}}</td><td>{{u.imie}}</td>
+		<td>{{u.nazwisko}}</td><td>{{u.utworzono}}</td><td>{{u.grupa}}</td><td>{{u.id|pobierz_opiekuna}}</td>
+		</tr>
+        {% endfor %}
+	</table>
+	<br>
+	{% if perms.e_dziennik.add_uczniowie_tmp %}
+	    {% if user|sprawdz_klase:klasa %}
+	        <img src='/site_media/images/icon_addlink.gif' border=0> <a href = '/{{klasa}}/Lista uczniow/add'>{% trans 'Dodaj nowego ucznia' %}</a>&nbsp &nbsp &nbsp 
+		    <img src='/site_media/images/filetype_document.gif' border=0> <a href = '/{{klasa}}/Lista uczniow/add_plik'>{% trans 'Wczytaj plik z danymi' %}</a>&nbsp &nbsp &nbsp
+			<img src='/site_media/images/editer.png' border=0> <a href = '/{{klasa}}/kartki'>{% trans 'Zestawienie ocen' %}</a>
+	    {% endif %}
+	{% endif %}
+	{% endif %}
+	
+	{% if brak_danych %}
+	    <br><div id='img_error'>Nie zdefiniowano listy {{brak_danych}} </div>
+	{% if perms.e_dziennik.add_uczniowie_tmp %}
+	    {% if user|sprawdz_klase:klasa %}
+	        <br><br><img src='/site_media/images/icon_addlink.gif' border=0> <a href = '/{{klasa}}/{{header}}/add'>{% trans 'Dodaj' %}</a>&nbsp &nbsp &nbsp 
+	        {% if brak_danych|equal %}<img src='/site_media/images/filetype_document.gif' border=0> <a href = '/{{klasa}}/Lista uczniow/add_plik'>{% trans 'Wczytaj plik z danymi' %}</a>{% endif %}
+	    {% endif %}
+	{% endif %}
+	{% endif %}
+	
+	
+	{% if uczen %}
+	<form method="post">
+	<table border=0 width='250'  rules='none' class='table'>
+    <th colspan =2>{{tytul}}</th>
+    <tr><td><br></td></tr>
+	   <td>{% trans 'Imię' %}:</td><td><input name='imie' value='{{uczen.imie}}' class='inputbox'></td>
+	</tr><tr>
+	   <td>{% trans 'Nazwisko' %}:</td><td><input name='nazwisko' value='{{uczen.nazwisko}}'></td>
+	</tr><tr>
+	   <td>{% trans 'Numer' %}:</td><td><input name='numer' value='{{uczen.numer}}'></td>
+	</tr></form>
+	
+	<tr><td><br><form action='/{{klasa}}/User/add/{{uczen.id}}'><input type='submit' id='addcomm' value='Dodaj opiekuna'></form></td>
+	<td><br><form action='/{{klasa}}/Lista uczniow/'><input type='submit' id='addcomm' value='Powrot'></form></td></tr>
+	</table>
+	<br>       
+	{% endif %}
+	 {% if delr %} 
+		{% trans 'Wpis został usunięty' %} 
+		</form><form action ='/{{klasa}}/{{klucz}}' ><input type='submit' value='Powrot' id="addcomm"></form>
+	{% endif %}
+
+{% endblock %}
+
+
+            {% block kontakt %} 
+			{% if not tydzien %}{% if not uczniowie %}{% if not weekdays %}{% if not cal %}
+            	<h3>{% trans 'Kontakt' %}</h3>
+	            <ul>
+                <li><img src='/site_media/images/mt_email.gif' border='0'> <a href="/{{klasa}}/email_send">{% trans 'Wyślij e-mail' %} </a></li>
+                <li><img src='/site_media/images/users.gif' border='0'> <a href="/sprawdz_msg">{% trans 'Wiadomości' %} ({{user.id|ilosc_msg}})</a></li>
+	            </ul>
+
+            {% endif %}{% endif %}{% endif %}{% endif %}
+			
+
+			{% endblock %}
+
+

@@ -1,0 +1,8 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}}
+{% block tytul %}Archiwum{% endblock %}
+{% block content %}
+{% for d in date_list %}
+<img src='/site_media/images/plus.jpg'> <a href='{{d|date:"Y"}}/'>{{d|date:"Y"}}</a> <br>
+{% endfor %}
+{% endblock %}

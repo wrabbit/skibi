@@ -1,0 +1,53 @@
+8
+
+dir
+91
+http://diamanda.googlecode.com/svn/trunk/diamandas/userpanel/locale/pl/LC_MESSAGES
+http://diamanda.googlecode.com/svn
+
+
+
+2008-03-03T13:18:19.834181Z
+86
+riklaunim
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+85d0068e-3e1c-0410-b905-29a38a2b45fb
+
+django.po
+file
+
+
+
+
+2008-03-11T17:30:28.377580Z
+ae74737c23941ea3f49c5423eee16d31
+2008-03-03T13:18:19.834181Z
+86
+riklaunim
+
+django.mo
+file
+
+
+
+
+2008-03-11T17:30:28.387595Z
+d02cb95ebaef3e2fd088e11c5426e905
+2008-03-03T13:18:19.834181Z
+86
+riklaunim
+has-props
+

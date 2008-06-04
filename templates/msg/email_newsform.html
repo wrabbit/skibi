@@ -1,0 +1,21 @@
+{% extends "base_tresc.html" %}
+{% block content %}
+{% load i18n %}
+
+<form method="post" action="">
+<table border=0 rules='none' class='table_user' cellspacing='0' cellpadding='0'>
+<th colspan=3 class='user1'>{% trans "Wyslij e-mail" %}</th><tr><td><br></td></tr>
+
+{% for field in f %}
+<tr>
+    <td id='mini'>
+	<label for="{{ field.label }}"><b>{{ field.label_tag }}</b>
+	{% if field.field.required %}<span class="requireds">*</span>{% endif %}</label>
+	{% if field.help_text %}<br>{{ field.help_text }}{% endif %}</td>
+    <td>{{ field }}{% if field.errors %}<div id='img_error'>{{ field.errors|join:", "}}</div></td>{% endif %}
+</tr>
+{% endfor %}
+<tr><td><input type="submit" value="Wyslij wiadomosc" id="addcomm"></td></tr>
+</table></form>
+
+{% endblock %}

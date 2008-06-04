@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel
+END
+hmessage.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/hmessage.html
+END
+zmessage.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/zmessage.html
+END
+panel.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/panel.html
+END
+pmessage.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/pmessage.html
+END
+profile_pmessage.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/profile_pmessage.html
+END
+register.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/register.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/login.html
+END
+userlist.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/88/trunk/diamandas/userpanel/templates/userpanel/userlist.html
+END

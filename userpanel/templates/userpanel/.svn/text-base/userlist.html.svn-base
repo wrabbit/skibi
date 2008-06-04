@@ -1,0 +1,28 @@
+{% extends "pages/body.html" %}
+{% load i18n %}
+{% block content %}
+<h2>{% trans "Users List" %}</h2>
+<div class="content">
+          <table>
+            <tr>
+              <th class="first"><strong>{% trans "Login" %}</strong></th>
+              <th><strong>{% trans "Actions" %}</strong></th>
+            </tr>
+            {% for u in object_list %}
+            <tr class="{% cycle rowA,rowB %}"> 
+              <td class="first"><strong>{{ u.username }}</strong>{{ u.first_name }} {{ u.last_name }}</td>
+              <td><a href="/user/pmessage/{{ u.username }}/">{% trans "Send Message" %}</a></td>
+            </tr>
+	    {% endfor %}
+          </table>
+</div>
+<div class="box" style="text-align:center;">
+{% if has_previous %}
+<h3><a href="/user/userlist/?page={{ previous }}">Poprzednia Strona</a></h3>
+{% endif %}
+{% if has_next %}
+<h3><a href="/user/userlist/?page={{ next }}">Następna Strona</a></h3>
+{% endif %}
+</div>
+{% endblock %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/user/">{% trans "User Panel" %}</a>{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "pages/body.html" %}
+{% load i18n %}
+{% block content %}
+<h2>{% trans "Send a Private Message" %}</h2><form action="." method="post">
+<div class="content">
+          <table>
+            <tr class="rowA">
+              <td class="first" style="width:25%;"><b>{% trans "Subject" %}</b></td>
+              <td>{{ form.subject }}{% if form.subject.errors %}<br />*** {{ form.subject.errors|join:", " }}{% endif %}</td>
+            </tr>
+            <tr class="rowB">
+              <td><b>{% trans "Text" %}</b></td>
+              <td>{{ form.contents }}{% if form.contents.errors %}<br />*** {{ form.contents.errors|join:", " }}{% endif %}</td>
+            </tr>
+          </table>
+</div>
+<div class="box"><br /><div style="text-align:center;"><input type="submit" value="{% trans "Send Message" %}" style="actiontable"></div><br /></div>
+</form>
+{% endblock %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/user/">{% trans "User Panel" %}</a>{% endblock %}

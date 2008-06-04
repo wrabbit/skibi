@@ -1,0 +1,27 @@
+{% extends "base_tresc.html" %}
+{% load ustawienia_extras %}
+{% block content %}
+
+ 
+<table border=1  id='nb_ucznia' cellspacing='0' cellpadding='0' bgcolor='#E6E6FA'>
+<tr>
+    <th>Uczeń</th><th>Godzina lekcyjna</th><th>Przedmiot</th><th>#</th>
+</tr>
+<tr>
+<td rowspan='{{n|length}}'>{{dziecko}}</td>
+{% for i in n %}
+    
+	<td>{{i.godzina}}</td>
+	<td>{{i.get_przedmiot}}</td>
+	<td style='background:{{i.wartosc|kolor}}'>{{i.wartosc}}</td>
+</tr>
+{% endfor %}
+
+</table>
+<table cellspacing='5' id='nb_ucznia' style='margin-top:15px;text-align:center;border:dashed 1px #CECF8F;'>
+<tr><td bgcolor='#C71585' width='11px'>s</td><td align='left'>spóźnienie</td></tr>
+<tr><td bgcolor='#FFD700'>-</td><td align='left'>nieobecność</td></tr>
+<tr><td bgcolor='#ADFF2F'>u</td><td align='left'>nieob. uspr.</td></tr>
+<tr><td bgcolor='#FF6347'>n</td><td align='left'>nieob. nieuspr.</td></tr>
+</table
+{% endblock %}

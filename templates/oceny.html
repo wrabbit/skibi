@@ -1,0 +1,81 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+{% block oceny %}
+
+<script type="text/javascript">
+function make_window(akcja,id) {
+if(akcja!='close'){
+document.getElementById("okienko1").style.display = 'block';
+document.getElementById("zmienna").value = id;
+}
+else document.getElementById("okienko1").style.display = 'none';
+}
+function zaznacz(typ,pole) {
+document.getElementById(pole).value = typ;
+document.getElementById("okienko1").style.display = 'none';
+}
+function pobierz() {
+zmienna=document.getElementById("zmienna").value;
+return zmienna;
+}
+window.onload =load;
+function load(){
+initLightbox();
+}
+
+</script>
+<style type='text/css'>
+#okienko1 {
+display: none;
+}
+</style>
+
+<div id='okienko1'>
+<table border=0 id='blink' width='220'>
+{% for w in wagi %}
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#F5F5F5';"><td align='center' style='color:green;font-weight:bold'>{{w}}</td><td id='{{w}}' onclick="zaznacz(this.id,pobierz())">{{w.opis}}</td></tr>
+{% endfor %}
+</table>
+<form name='idN'><input type='hidden' id='zmienna'></form>
+<span style="float:right; margin-right:20px;margin-bottom:10px; cursor: pointer; text-decoration: underline" onclick="make_window('close')">Anuluj</span>
+</div>
+<div id='info' style='position: absolute;' 
+onmouseover="return overlib('Do opiekuna ucznia zostanie automatycznie wysłana wiadomość z informacją o zagrożeniu.');" onmouseout="return nd();"></div>
+<form name = 'oceny' method='POST' action='{{semestr.id}}/{{przedmiot.id}}/'>
+	<table border=1 class='table_oceny' cellspacing='0' cellpadding='0' width='850'>
+	<th class='user' rowspan=2>Nr</th>
+	<th class='user' rowspan=2>Nazwisko i imię</th>
+	<th class='user' colspan='{{kolumny|length}}'>Wagi</th>
+	<th class='user' rowspan=2>Śr.</th>
+	<th class='user' rowspan=2>Oc. <br>prop.</th>
+	<th class='user' rowspan=2>Sem.</th>
+	<tr>
+	{% for k in kolumny %}
+	<th class='user'><input style='cursor:pointer' type='text' id ='w{{k}}' class = 'wagi'  maxlength='3' name='w{{k}}' value='{{k|pobierz_wagi:przedmiot.id}}' onblur="return checkwagi(this.id)" onclick="make_window('open',this.id)"></th>
+	{% endfor %}
+    </tr>
+	{% for u in uczniowie %}
+	<tr>
+	    <td>{{u.numer}}</td>
+	    <td><a href="/site_media/{{u.get_photo_url}}" rel="lightbox" style="color:black">{{u.nazwisko}} {{u.imie}}</a></td>
+	    
+    {% for k in kolumny %}
+	    <td><input {% if not user|sprawdz_klase:klasa %}readonly{% endif%} style='background:#FEFEF2;border:0px ' type='text' id='{{k}}-{{u.id}}'  maxlength=2 name='{{k}}-{{u.id}}' value='{{k|pobierz_oceny:u.id}}' onblur="return checkoceny(this.id,{{kolumny|length}})"></td>
+	{% endfor %}
+	
+	<td><input  type='text' id='{{u.id|dolacz:"sr"}}'  maxlength=4 style='width:30px;' name='{{u.id|dolacz:"sr"}}' value='{{kolumny|leni:"1"|pobierz_koncowe:u.id}}' onblur="return checksrednie(this.id)"></td>
+	<td><input type='text' id='{{u.id|dolacz:"pro"}}'  maxlength=2 name='{{u.id|dolacz:"pro"}}' value='{{kolumny|leni:"2"|pobierz_koncowe:u.id}}' onblur="return checkoceny(this.id,this)"></td>
+	<td><input type='text' id='{{u.id|dolacz:"sem"}}'  class='semestr'  maxlength=2 name='{{u.id|dolacz:"sem"}}'  value='{{kolumny|leni:"3"|pobierz_koncowe:u.id}}' onblur="return checkoceny(this.id,this.value)"></td>
+	{% endfor %}
+	</tr>
+    </table>
+	{% if perms.e_dziennik.add_oceny %}
+	    {% if user|sprawdz_klase:klasa %}
+	        <br><input type='submit' id='addcomm' value='Zapisz'>
+</form>
+		{% endif %}
+	{% endif %}
+
+    <!--<form action='/{{klasa}}/Oceny/sss'><input type='submit' id='addcomm' value='Przywroc oceny'>-->
+	
+{% endblock %}

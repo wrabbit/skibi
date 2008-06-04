@@ -1,0 +1,14 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+
+{% block content %}
+
+	<div class="post">
+		<h2 class="title">{{object.news_title}}</h1>
+	    <p class="byline"><small>{{object.news_date}}</small></p>
+		<div class="entry">
+		{{object.news_text}}
+        </div>
+	</div>
+
+{% endblock %}

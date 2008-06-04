@@ -1,0 +1,32 @@
+{% extends "base_tresc.html" %}
+{% block content %}
+{% load i18n %}
+
+<form method="post" action=".">
+<table class='table_user' cellspacing='0' cellpadding='0'>
+<th colspan=2 class='user1'>{% trans "Wyslij wiadomosc" %}<a href="/sprawdz_msg" style='color:white;text-decoration:underline;' id='odsun'>Sprawdz wiadomosci</a></th>
+<tr><td><br><br></td></tr>
+
+<tr>
+    <td id='mini'>
+	<label for="{{ f.user.label }}"><b>Wyslij do: </b>
+	{% if f.user.field.required %}<span class="requireds">*</span>{% endif%}</label>
+	{% if f.user.help_text %}</br>{{ f.user.help_text }}{% endif %}
+	</td>
+	<td>{{f.user}}{% if f.user.errors %}<div id='img_error'>{{f.user.errors|join:", "}}</div></td>{% endif %}
+</tr>
+<tr>
+    <td id='mini'>
+	<label for="{{ f.message.label }}"><b>{{ f.message.label_tag }}: </b>
+	{% if f.message.field.required %}<span class="requireds">*</span>{% endif%}</label>
+	{% if f.message.help_text %}</br>{{ f.message.help_text }}{% endif %}
+	</td>
+	<td>{{f.message}}{% if f.message.errors %}<div id='img_error'>{{f.message.errors|join:", "}}</div></td>{% endif %}
+</tr>
+
+<tr><td colspan=2 align='right' style='padding-right:40px;color:#008000;font-weight:normal;'>
+<input type='checkbox' name='sms'> Wyslij jako SMS</td></tr>
+<tr><td><input type="submit" value="Wyslij wiadomosc" id="addcomm"></td></tr>
+</table></form>
+
+{% endblock %}

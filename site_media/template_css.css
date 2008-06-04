@@ -1,0 +1,899 @@
+/* ---------------------
+basic layout
+--------------------- */
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.waterbody {
+	background:#CCCCCC url(images/bg_body.jpg) repeat-x left top;
+	margin:0;
+	color:#333333;
+}
+
+div,
+td,
+p {
+	font-size:12px;
+	line-height:18px;
+	color:#333333;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+	text-decoration:underline;
+	color:#000000;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+ul {
+	margin: 5px;
+	padding: 5px;
+	list-style: none;
+}
+
+li {
+	line-height: 18px;
+	padding-left: 5px;
+	padding-top: 0px;
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+/** To center the objects **/
+.center {
+	text-align:center!important;
+}
+
+/** clear the banner to make it sit in the bottom **/
+.clear {
+	clear:both;
+}
+
+/* ---------------------
+template layout
+--------------------- */
+
+/** wrapper to make the page center **/
+#container {
+	width:760px;
+	margin: 55px auto;
+	padding:0;
+	text-align: left;
+}
+
+/**
+hold background, it should be float:left
+that's way we can not put it in #container
+**/
+#containerbg {
+	width: 760px;
+	background:transparent url(images/bg_inside.jpg) repeat-y left top;
+	float:left;
+}
+
+#outerleft {
+	position:relative;
+	float:left;
+	clear:left;
+	width:590px;
+	
+}
+
+#outerright {
+	position:relative;
+	width:170px;
+	float:right;
+	clear:right;
+}
+
+#logo {
+	position:relative;
+	width:100%;
+	height:74px;
+	float:left;
+	background:#FFFFFF url(images/bg_header.jpg) no-repeat left top;
+}
+
+/** div container for top menu. position:top **/
+#topmenu {
+	position:relative;
+	float:left;
+	clear:left;
+	background-color:#000000;
+	width: 100%;
+}
+
+/** div container for image header **/
+#imgheader {
+	position:relative;
+	float:left;
+	clear:left;
+	width:100%;
+	height:90px;
+	background-color: #000000;
+}
+
+#container_inner {
+	position:relative;
+	float:left;
+	clear:left;
+	width:590px;
+}
+
+/** div container for left column **/
+#leftcol {
+	position:relative;
+	float:left;
+	clear:left;
+	width:170px;
+	background:transparent url(images/bg_leftcol.jpg) repeat-y left top;
+}
+
+/** div wrapper for user2 & user3 **/
+#content_top_wrapper {
+	position:relative;
+	float:right;
+	clear:right;
+	width:405px;
+	display:inline;
+	margin: 4px 6px 0 0;
+}
+
+/** div container for position:user2 **/
+#content_top1 {
+	position:relative;
+	float:left;
+	clear:left;
+	width:200px;
+	
+}
+
+/** div container for position:user3 **/
+#content_top2 {
+	position:relative;
+	float:right;
+	clear:right;
+	width:200px;
+	
+}
+
+/** div container for mainbody **/
+#content_main {
+	position:relative;
+	float:left;
+	width:400px;
+	margin:10px 0 0 10px;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+
+/** div container for right column **/
+#rightcol_top,
+#rightcol {
+	float:left;
+	clear:left;
+	width:168px;
+	margin:0 0 0 1px;
+	display:inline;
+}
+
+/** div container for right column position:header **/
+#rightcol_top {
+	height:70px;
+	min-height:70px;
+	background:transparent url(images/bg_topright.jpg) no-repeat center top;
+}
+
+/** div container for banner position:banner **/
+#banner {
+	position:relative;
+	clear:left;
+	float:left;
+	width:590px;
+	height:65px;
+	min-height:65px;
+	color:#FFFFFF;
+	font-size:9px;
+	background-color: #333333;
+	display:block;
+	text-align:center!important;
+	vertical-align:middle;
+	padding:5px 0 0 0;
+}
+
+#blackline {
+	position:relative;
+	clear:left;
+	float:left;
+	width:590px;
+	height:10px;
+	min-height:10px;
+	background-color: #000000;
+	color:#FFFFFF;
+	font-size:10px;
+}
+
+
+/** copyright **/
+#copyright {
+	position:relative;
+	width:760px;
+	float:left;
+	color:#666666;
+	font-size:10px;
+	font-weight:bold;
+	display:block!important;
+	clear:left;
+	margin:-5px 0 0 0;
+	text-align:left;
+}
+
+
+/* ---------------------
+mambo content layout
+--------------------- */
+
+/** pathway block **/
+span.pathway {
+	display:block;
+	text-align:left;
+	color:#000000;
+	font-size:10px;
+	font-weight:bold;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E5E5E5;
+	height:20px;
+	margin-bottom:10px;
+}
+
+/** content title **/
+.componentheading {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#000000;
+	font-size: 20px;
+	padding: 5px 0 0px 0;
+	display:block;
+}
+
+.contentheading,
+.contentpagetitle,
+a.contentpagetitle:link,
+a.contentpagetitle:active,
+a.contentpagetitle:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#3973AC;
+	font-weight: bold;
+	padding-top: 25px;
+	background-color:inherit;
+	display:block;
+}
+
+.buttonheading {
+	width: 16px;
+	
+}
+
+
+.sectiontableheader {
+	font-weight: bold;
+}
+
+.category, .categorytitle {
+	font-weight: bold;
+	color:#3973AC;
+	background-color:inherit;
+}
+
+.sectiontableentry1 {
+	background-color: #EFEFEF;
+	padding: 2px;
+	color:#333333;
+}
+
+.sectiontableentry2 {
+	background-color: #FFFFFF;
+	padding: 2px;
+	color:#333333;
+}
+
+/** blog Styles **/
+.blogsection {
+	color:#3973AC;
+	background-color:inherit;
+}
+
+.blog_more {
+	font-weight: bold;
+	line-height: 25px;
+	padding-top: 20px;
+	color: #3973AC;
+	border-bottom: 1px solid #E5E5E5;
+	background-color:inherit;
+}
+
+/** small text in content **/
+.small {
+	color:#999999;
+	font-size:10px;
+	font-weight: bold;
+	background-color:inherit;
+}
+
+/** date info in content **/
+#content_main .createdate {
+	color:#4A87C4;
+	font-size:10px;
+	padding: 0 0 15px 0;
+	line-height:8px;
+	background-color:inherit;
+}
+
+#content_main .modifydate {
+	color:#999999;
+	font-size:10px;
+	padding: 0;
+	background-color:inherit;
+}
+
+/** toc page navigation  **/
+.pagenav_prev,
+.pagenav_next {
+	font-size:11px;
+}
+
+
+/** content item navigation  **/
+.pagenavbar  {
+	display:block;
+	width:100%;
+	background-color:inherit;
+	height:20px;
+	line-height:25px;
+	text-align:right;
+	letter-spacing:2px;
+	color:#999999!important;
+	clear:both;
+	font-size: 11px!important;
+	margin-top: 10px;
+}
+
+.pagenav {
+	height:20px;
+	line-height:25px;
+	text-align:right;
+	letter-spacing:2px;
+	color:#999999;
+	clear:both;
+	font-size: 11px;
+	margin-left: 0;
+	margin-right: 0;
+	background-color:inherit;
+}
+
+.back_button {
+	display:block;
+	text-align:left;
+	font-weight:bold;
+	font-size:12px;
+	width:100%;
+	margin-bottom:10px;
+	letter-spacing:2px;
+}
+
+/** highlight word search result **/
+.highlight {
+	font-weight:bold;
+	background-color: #FFFF00;
+	padding: 2px 0 2px 0;
+	
+}
+
+/** table of content layout **/
+table.contenttoc {
+	border:1px solid #000000;
+	padding:1px;
+	display:block;
+	width:130px;
+	margin: 0 0 10px 10px;
+}
+
+/** table of content header **/
+.contenttoc th {
+	color:#FFFFFF;
+	background-color:#666666;
+	font-size:11px;
+	display:block;
+	width:124px;
+}
+
+/** unordered list for latest news module **/
+ul.latestnews li,ul.mostread li {
+    line-height: 18px;
+	font-size:11px;
+	font-weight:bold;
+	list-style-type: none;
+	list-style-position: outside;
+}
+
+
+/** fix opera table width for content list in table category**/
+table.contentpane td.contentdescription {
+	width:100%!important;
+}
+
+
+/* ---------------------
+Links
+--------------------- */
+
+/** any left column link **/
+#leftcol a:link,
+#leftcol a:active,
+#leftcol a:visited {
+	color:#FFFFFF;
+}
+
+a.pagenav:link ,
+a.pagenav_next:link,
+a.pagenav_pre:link,
+div.back_button a,
+div.back_button a:link,
+a.latestnews:link,
+a.latestnews:active,
+a.latestnews:visited,
+a.mostread:link,
+a.mostread:active,
+a.mostread:visited {
+	text-decoration:none;
+}
+
+/*** read more link ***/
+.readon,
+a.readon:link,
+a.readon:active,
+a.readon:visited {
+	color:#666666;
+	font-weight:bold;
+	text-align:left;
+	margin-top:10px;
+	letter-spacing: 2px;
+	font-size:10px;
+	text-decoration:none;
+}
+
+/*** blog links ***/
+a.blogsection:link,
+a.blogsection:active,
+a.blogsection:visited {
+	color:#3973AC;
+	text-decoration:none;
+}
+
+/** generic menu item link **/
+a.mainlevel:link,
+a.mainlevel:active,
+a.mainlevel:visited,
+a.sublevel:link,
+a.sublevel:active,
+a.sublevel:visited {
+	color:#FFFFFF;
+	text-decoration:none;
+	font-size:11px;
+	line-height: 27px;
+}
+
+/** generic menu item link on mouseover **/
+a.mainlevel:hover,
+#leftcol a.mainlevel:hover {
+	background-color:#484848;
+	color:#FFFFFF!important;
+	text-decoration:none!important;
+}
+
+/** specific top right column menu item link **/
+a.mainlevel-right:link,
+a.mainlevel-right:active,
+a.mainlevel-right:visited,
+a.sublevel-right:link,
+a.sublevel-right:active,
+a.sublevel-right:visited {
+	color:#000000;
+	text-decoration:none;
+	font-size:11px;
+}
+
+/** specific top right column menu item link on mouseover **/
+a.mainlevel-right:hover {
+	background-color:#CCCCCC;
+	text-decoration:none;
+}
+
+
+/** pathway link item **/
+a.pathway:link,
+a.pathway:link,
+a.pathway:active,
+a.pathway:visited {
+	color:#999999;
+	text-decoration:none;
+}
+
+/** table of content list **/
+a.toclink:link,
+a.toclink:active,
+a.toclink:visited {
+	color:#3973AC;
+	font-size:11px;
+	padding:2px 10px 2px 10px;
+	display:block;
+	text-decoration:none;
+}
+
+.pagenavbar a:link,
+.pagenavbar a:active,
+.pagenavbar a:visited  {
+	letter-spacing:2px;
+	color:#000000;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.pagenavbar a:hover {
+	color:#3973AC;
+}
+
+/** latestnews and popular **/
+.latestnews,
+.mostread {
+	color:#000000;
+}
+
+a.latestnews:link,
+.mostread a:link,
+.latestnews a:active,
+.mostread a:active,
+.latestnews a:hover,
+.mostread a:hover,
+.latestnews a:visited,
+.mostread a:visited {
+	color:#000000;
+	text-decoration:underline;
+}
+
+/** underline on hover **/
+a.toclink:hover,
+a.latestnews:hover,
+a.mostread:hover,
+a.pathway:hover,
+a.sublevel:hover,
+a.sublevel-right:hover,
+a.blogsection:hover,
+a.readon:hover,
+a.pagenav:hover ,
+a.pagenav_next:hover,
+a.pagenav_pre:hover,
+a.latestnews:hover {
+	text-decoration:underline;
+	color:#3973AC;
+	background-color:inherit;
+}
+
+#leftcol a:hover {
+	color: #93B7DB;
+	text-decoration:underline;
+}
+
+
+/* ---------------------
+mambo module layout
+--------------------- */
+
+/** general module table **/
+table.moduletable,
+#leftcol table,
+#rightcol table {
+	width:100%;
+	float:left;
+	clear:left;
+}
+
+/** general module table **/
+#rightcol table,
+#leftcol table td {
+	font-size:11px !important;
+	color:#CCCCCC;
+}
+
+#rightcol table,
+#rightcol table td {
+	font-size:11px !important;
+	color:#030303;
+}
+
+/** general module title **/
+table.moduletable th,
+table.moduletable-bgimg th,
+table.moduletable-right th {
+	border: 1px solid #000000;	
+	color:#FFFFFF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:15px;
+	line-height:20px;
+	background-color:#484848;
+	height:25px;
+	text-align:left;
+	padding-left:15px;
+	font-weight:normal;
+}
+
+/** specific module td table for content top 1 and 2. 
+position:user2 an user3 **/
+#content_top1 table.moduletable td,
+#content_top2 table.moduletable td {
+	background:transparent url(images/bg_module_contenttop.jpg) no-repeat center bottom;
+	height:100px;
+	min-height:100px;
+	vertical-align:top;
+}
+
+/** right column module td **/
+#rightcol table.moduletable td   {
+	padding:5px;
+}
+
+/** generic menu item **/
+.mainlevel  {
+	display:block;
+	height:25px;
+	line-height:25px;
+	padding-left:15px;
+	background:transparent url(images/bg_mainlevel.gif) repeat-x center top;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+/** specific left column form **/
+#leftcol form {
+	margin-left:15px;
+}
+
+/** specific left column form **/
+#leftcol .button {
+	font-size:11px;
+	color:#FFFFFF;
+	background-color:#585858;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #888888;
+	border-top: 1px solid #888888;
+	width:140px;
+}
+
+
+/** specific left column form **/
+#leftcol .inputbox {
+	font-size:11px;
+	font-weight: bold;
+}
+
+/** module styles in #leftcol **/
+#leftcol table.moduletable td {
+	color:#DADADA;
+	font-size:11px;
+}
+
+/** search div in top right column. position:user4 **/
+div.search {
+	margin-left:10px;
+}
+
+/** search field in search div **/
+.search .inputbox {
+	width:130px;
+	border: 1px solid #000000;
+}
+
+/* ---------------------
+mambo form layout
+--------------------- */
+
+/** left column input form **/
+#leftcol .inputbox {
+	font-size:11px;
+	/*border: 1px solid #000000;*/
+	margin-bottom:2px;
+}
+
+/** input button html tag **/
+.button,
+#rightcol .button {
+	font-size:11px;
+	text-transform:uppercase;
+	color:#666666;
+	font-weight:bold;
+	background-color:#CCCCCC;
+	border-top: 1px solid #FFFFFF;
+	border-right: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px solid #FFFFFF;
+}
+
+#rightcol .button {
+	background-color:#E5E5E5;
+}
+
+.search  {
+	margin-top:30px;
+}
+
+
+
+/* 
+mambo top menu layout
+you need to add menu class suffix: -nav
+*/
+
+/** unordered list top menu **/
+ul#mainlevel-nav
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.8em;
+}
+
+/** unordered list item for top menu **/
+ul#mainlevel-nav li
+{
+	display: block;
+	padding-left: 0px;
+	padding-right: 0px;
+	float: left;
+	margin: 0;
+	width: auto !important;
+	font-size: 11px;
+	line-height: 23px;
+	white-space: nowrap;
+}
+
+/** unordered list item link for top menu **/
+ul#mainlevel-nav li a
+{
+	display: block;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight:bold;
+}
+
+/** unordered list item link for top menu for firefox only **/
+#topmenu>ul#mainlevel-nav li a {
+	width: auto;
+}
+
+/** unordered list item for top menu for firefox only **/
+ul#mainlevel-nav li a:hover {
+	background: #535353;
+	text-decoration:none;
+}
+
+
+ /*
+specific right column menu item. position:right
+you need to add menu class suffix: right
+ */
+.mainlevel-right {
+	display:block;
+	height:25px;
+	line-height:25px;
+	padding-left:15px;
+	background:#EEF0F0 url(images/bg_mainlevel_right.gif) repeat-x center top;
+	font-weight:bold;
+}
+
+/** 
+moduletable specific with background image
+you need to add modules class suffix: -bgimg
+ **/
+table.moduletable-bgimg {
+	background:transparent url(images/bg_module.jpg) no-repeat center bottom;
+	float:left;
+	clear:left;
+	width:100%;
+}
+
+table.moduletable-bgimg td {
+	padding: 5px ;
+	font-size:11px;
+}
+
+table.moduletable-bgimg td td {
+	padding: 0!important;
+}
+
+/** for polls **/
+.poll {
+	font-size:11px;
+	line-height: 16px;
+}
+
+table.pollstableborder .sectiontableentry2 {
+	background-color:transparent; 
+	text-align:left; 
+}
+table.pollstableborder .sectiontableentry1 {
+	background-color:#F5F5F5; 
+	text-align:left;
+}
+
+.moduletable_bgimg table.pollstableborder td.sectiontableentry2,
+.moduletable_bgimg table.pollstableborder td.sectiontableentry1 {
+	background-color:transparent!important; 
+	text-align:left!important; 
+}
+
+/** hack to make any div or table inside content will not stretcg outside area*/
+table.contentpane  table table input.inputbox {
+	max-width:80px;
+	width:80px;
+}
+
+table.contentpane {
+	width:390px!important;
+}
+
+.contentpaneopen {
+	width:100%!important;
+}
+
+.contentpaneopen tr.sectiontableentry2 td,
+.contentpaneopen tr.sectiontableentry1 td{
+	display:block;
+	width:390px!important;
+}
+
+#con_global div, #con_global table,
+#hp_view_standard_photo_con1 div div,
+#hp_view_agen_con {
+	width:390px!important;
+	text-align:left;
+}
+
+#hp_view_standard_photo_con1 div div,
+#hp_view_standard_photo_con2,
+#hp_view_standard_photo_con3,
+#hp_view_agen_con {
+	width:390px!important;
+	text-align:left;
+}
+
+table.contentpane  table  {
+	width:390px!important;
+	text-align:left;
+}
+
+table.contentpane  td.contentheading  {
+	width:200px!important;
+}
+
+table.contentpane  td.buttonheading  {
+	width:150px!important;
+}
+
+#bottompadding	{
+	position:relative;
+	width:760px;
+	display:block;
+	height:20px;
+	margin-top:-100px;
+}

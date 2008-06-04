@@ -1,0 +1,32 @@
+{% extends "pages/body.html" %}
+{% load i18n %}{% load fbc %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > {% ifequal apptype "1" %}<a href="/w/p/{{ a.slug }}/">{{ a.title }}</a>{% endifequal %}{% ifequal apptype "4" %}<a href="/tra/show/{{ appid }}/">{{ a.name }}</a>{% endifequal %}{% ifequal apptype "5" %}<a href="/bgate/show/{{ appid }}/">{{ a.name }}</a>{% endifequal %}{% ifequal apptype "2" %}<a href="/bgate/mod/show/{{ appid }}/">{{ a.name }}</a>{% endifequal %}{% endblock %}
+
+{% block content %}<div class="box">{% trans "Here you can read all comments for" %} "<i>{{ title }}</i>". {% trans "You can add your comment using the form below. Please do not ask for help - use <b>Forums</b> for help and support." %}</div>
+{% if com %}
+{% for i in com %}
+<h4 style="margin-bottom:0px;"><b> {{ i.author }} {% trans "on" %}</b> {{ i.date|date:"d.m.Y G:i" }} (<a href="/com/{{ appid }}/{{ apptype }}/{{ i.id }}/">{% trans "Quote" %}</a>)
+{% if user.is_staff %}<a href="/admin/boxcomments/comment/{{ i.id }}/">{% trans "Admin" %}</a>{% endif %}</h4>
+<div class="box" style="margin-top:0px;">{{ i.text|fbc|safe }}</div>
+{% endfor %}
+{% else %}
+<h4>{% trans "No Comments" %}</h4>
+{% endif %}
+{% if ban %}<h2>{% trans "You can't post 3 comments in a row" %}</h2>{% else %}<h2>{% trans "Add Comment" %}</h2>
+<div class="content">
+         <form method="post" action="."> <table><input type="hidden" value="{{ hash }}" name="imghash" />
+            <tr class="rowA">
+              <td class="first" style="width:25%;"><b>{% trans "Comment" %}</b></td>
+              <td>{{ form.text }}{% if form.text.errors %}<br />*** {{ form.text.errors|join:", " }}{% endif %}<br /><b>{% trans "You can use" %}</b>: [b]{% trans "bold" %}[/b], [i]{% trans "italic" %}[/i], [u]{% trans "underline" %}[/u], [quote]{% trans "quote" %}[/quote], [url]{% trans "link" %}[/url]</b></td>
+            </tr>
+            <tr class="rowB">
+              <td><b>{% trans "Text from the image" %}</b></td>
+              <td>{{ form.imgtext }}{% if form.imgtext.errors %}<br />*** {{ form.imgtext.errors|join:", " }}{% endif %}<br /><img src="/site_media/captcha/{{ user }}.jpg" alt=""></td>
+            </tr>
+             <tr class="rowA">
+              <td></td>
+              <td><div style="text-align:center;"><input type="submit" value="{% trans "Add Comment" %}" /></div></td>
+            </tr>
+          </table></form>
+</div>{% endif %}
+{% endblock %}

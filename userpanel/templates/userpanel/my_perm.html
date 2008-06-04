@@ -1,0 +1,11 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% block content %}
+
+<table cellspacing='1' border=1 rules='none' width='70%' bgcolor='#EEEEEE'>
+<th colspan=2 class='user1'><b>{% trans "My Permissions" %}</b></th>
+{% for i in perm %}
+<tr><td><img src='/site_media/images/img12.gif' border=0> {{i}}</li></td></tr>
+{% endfor %}
+</table>
+{% endblock %}

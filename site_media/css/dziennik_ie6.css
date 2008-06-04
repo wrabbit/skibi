@@ -1,0 +1,66 @@
+#column3
+{
+	width: 44%;
+	position: absolute;
+	margin-top: -9%;
+	margin-left: 20%;
+}
+
+#linia
+{
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 80px;
+	width:280px;
+}
+#linia1
+{
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 300px;
+	width:200px;
+}
+
+
+
+#opcje_center
+{
+    position: relative;
+    margin-top: -2%;
+    margin-left: 70%;
+	font-family: arial;
+}
+
+
+.table_oceny
+{
+    font-size:11px;
+	font-family:verdana;
+	padding: 0.0em;
+	line-height: 1.5em;
+	
+
+}
+
+.table_oceny input
+{
+	width: 25px;
+	text-align: center;
+   
+}
+.aktywne{
+   float:center;
+   cursor:pointer;
+   border: 1px solid #778899;
+   width:10px;
+}
+.nieaktywne{
+   background-color:#D3D3D3;
+   border: 1px solid #778899;
+}
+.title {
+	margin: 0;
+	border-bottom: none;
+	text-decoration:none;
+	color: #484848;
+}

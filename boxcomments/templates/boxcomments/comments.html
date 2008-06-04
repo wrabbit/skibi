@@ -1,0 +1,53 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}{% load fbc %}{% load extras %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > {% ifequal apptype "1" %}<a href="/w/p/{{ a.slug }}/">{{ a.title_text }}</a>{% endifequal %}{% ifequal apptype "4" %}<a href="/tra/show/{{ appid }}/">{{ a.name }}</a>{% endifequal %}{% ifequal apptype "5" %}<a href="/bgate/show/{{ appid }}/">{{ a.name }}</a>{% endifequal %}{% ifequal apptype "2" %}<a href="/bgate/mod/show/{{ appid }}/">{{ a.name }}</a>{% endifequal %}{% endblock %}
+
+{% block content %}
+
+
+{% if not add %}
+
+{% for i in object_list %}
+<h4 style="margin-bottom:0px;"><b><img src='/site_media/images/bul.gif'><a href='/com/{{i.id}}/' style='color:#483D8B;text-decoration:underline;'>{{i.title_com}}</a></b></h4>
+<p id='mini'>&nbsp;&nbsp;&nbsp;(<b>{{ i.author }}</b> {% trans "dnia" %} {{ i.date|date:"d.m.Y G:i" }} |<a href="/com/{{ appid }}/1/{{i.id}}/add">{% trans "Cytuj" %}</a>)</p>
+{% if user.is_staff %}<a href="/admin/boxcomments/comment/{{ i.id }}/">{% trans "Edytuj" %}</a>{% endif %}
+<div class="bowx" style="margin-top:0px;">{{ i.text|fbc|skrot }}</div><br>
+{% endfor %}
+<hr>
+<table border=0 width='100%' style='font-size:11px;'>
+<tr>
+<td width='50%'><a href ="add">{% trans "Dodaj komentarz" %}</a></td>
+<td>
+{% if has_previous %}&lsaquo; <a href="?page={{previous}}">Nowsze komentarze</a>{% endif %}
+{% if has_next %} | <a href="?page={{next}}">Starsze komentarze</a> &rsaquo;{% endif %}
+</td>
+</tr>
+</table>
+
+{% else %}
+
+{% if ban %}<h2>{% trans "Nie możesz dodać trzech postów z rzędu" %}</h2>
+{% else %}
+
+         <form method="post" action="."> 
+		 <table><input type="hidden" value="{{ hash }}" name="imghash" />
+		    <tr>
+              <td class="first" style="width:25%;"><b>{% trans "Tytuł" %}</b></td>
+              <td>{{ form.title_com }}{% if form.title_com.errors %}<br />*** {{ form.title_com.errors|join:", " }}{% endif %}<br /></td>
+            </tr>
+            <tr>
+              <td class="first" style="width:25%;"><b>{% trans "Komentarz" %}</b></td>
+              <td>{{ form.text }}{% if form.text.errors %}<br />*** {{ form.text.errors|join:", " }}{% endif %}<br /><div id='mini'><b>{% trans "You can use" %}</b>: [b]{% trans "bold" %}[/b], [i]{% trans "italic" %}[/i], [u]{% trans "underline" %}[/u], [quote]{% trans "quote" %}[/quote], [url]{% trans "link" %}[/url]</b></div></td>
+            </tr>
+            <tr>
+              <td><b>{% trans "Tekst z grafiki" %}</b></td>
+              <td>{{ form.imgtext }}{% if form.imgtext.errors %}<br />*** {{ form.imgtext.errors|join:", " }}{% endif %} <img src="/site_media/captcha/{{ user }}.jpg" alt="" align='center'></td>
+            </tr>
+             <tr>
+              
+              <td><div style="text-align:left;"><input type="submit" id="addcomm" value="{% trans 'Dodaj komentarz' %}" /></div></td>
+            </tr>
+          </table></form>
+{% endif %}
+{% endif %}
+{% endblock %}

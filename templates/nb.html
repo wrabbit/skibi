@@ -1,0 +1,165 @@
+{% extends "base_tresc.html" %}
+{% load extras %}
+
+{% block nieobecnosci %}
+
+<script type="text/javascript">
+window.onload = load;
+function make_window(akcja,numer,id,obj) {
+if(akcja!='close'){
+
+var curleft = sprawdzLeft(obj);
+var curtop = sprawdzTop(obj);
+$("info").style.left = -23+'px';
+$("info").style.top = curtop+-180+'px';
+
+
+
+$("info").innerHTML='';
+document.getElementById("okienko").style.display = 'block';
+document.getElementById("zmienna").value = id;
+document.getElementById("zmienna1").value = numer;
+document.getElementById("zmienna2").value = obj;
+document.getElementById(numer).style.background = '#98FB98'
+}
+else {
+
+document.getElementById("okienko").style.display = 'none';
+document.getElementById(numer).style.background = '#FEFEF2';
+}
+}
+function zaznacz(typ,pole,kolor,numer) {
+document.getElementById("F_"+pole).value = typ;
+document.getElementById(pole).innerHTML = typ;
+document.getElementById(pole).style.background = kolor
+document.getElementById(numer).style.background = '#FEFEF2';
+document.getElementById("okienko").style.display = 'none';
+
+if (typ=='n'){
+
+$("info").innerHTML='<img src=/site_media/images/info11.gif />';
+
+}
+else{
+$("info").innerHTML='';
+}
+
+}
+function pobierz() {
+zmienna=document.getElementById("zmienna").value;
+return zmienna;
+}
+function pobierz1() {
+zmienna1=document.getElementById("zmienna1").value;
+return zmienna1;
+}
+function pobierz2() {
+zmienna1=document.getElementById("zmienna2").value;
+return zmienna2;
+}
+
+function load() {
+
+tabela = document.getElementById('nb');
+kolumna = tabela.getElementsByTagName('td');
+for (var i = 0; i < kolumna.length; i++){
+if (kolumna[i].innerHTML[3]=='s' || kolumna[i].innerHTML =='s') kolumna[i].style.background='#C71585';
+if (kolumna[i].innerHTML[3]=='-' || kolumna[i].innerHTML =='-') kolumna[i].style.background='#FFD700';
+if (kolumna[i].innerHTML[3]=='u' || kolumna[i].innerHTML =='u') kolumna[i].style.background='#ADFF2F';
+if (kolumna[i].innerHTML[3]=='n' || kolumna[i].innerHTML =='n') kolumna[i].style.background='#FF6347';
+if (kolumna[i].innerHTML[3]=='x' || kolumna[i].innerHTML =='x') kolumna[i].style.background='#6495ED';
+}
+initLightbox();
+}
+
+
+</script>
+
+<style type='text/css'>
+#okienko {
+display: none;
+}
+#okienko3 {
+display: none;
+}
+</style>
+
+<div id='okienko3'>
+<center><form>
+<table><tr><td>
+<select name='year' style='width:60px;' onchange="wczytaj(this.value,this.form.month.value)">
+<option>2007</option>
+<option>2008</option>
+<option>2009</option>
+</select></td>
+<td><select name='month' style='width:80px;' onchange="wczytaj(this.form.year.value,this.value)">
+<option value=1>Styczeń</option><option=2>Luty</option><option=3>Marzec</option><option=4>Kwiecień</option>
+<option value=5>Maj</option><option value=6>Czerwiec</option><option=7>Lipiec</option>
+<option value=8>Sierpień</option><option value=9>Wrzesień</option><option value=10>Październik</option>
+<option value=11>Listopad</option><option value=12>Grudzień</option>
+</select></td></tr></table>
+</form>
+<span id='kal'>{{"2008"|create_calendar:"3"}}</span></center>
+<span style="float:right; margin-right:20px;margin-bottom:10px; cursor: pointer; text-decoration: underline" onclick="calendar('close',this)">Anuluj</span>
+</div>
+
+<div id='info' style='position: absolute;' 
+onmouseover="return overlib('Do opiekuna ucznia zostanie automatycznie wysłana wiadomość SMS z informacją o nieobecności na zajęciach.');" onmouseout="return nd();"></div>
+
+<img src='/site_media/images/icon_calendar.gif'/> <a href="javascript:calendar('open',this,140,0)">Wybierz datę</a>
+
+
+<div id='okienko'>
+<table border=0 id='blink' width='100%' >
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FFFAFA';"><td bgcolor='#FFFFFF' width='3%'> </td><td title='' id='#FFFFFF' onclick="zaznacz(this.title,pobierz(),this.id,pobierz1())">obecnosc</td></tr>
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FFFAFA';"><td bgcolor='#C71585' >s</td><td title='s' id='#C71585' onclick="zaznacz(this.title,pobierz(),this.id,pobierz1())">spoznienie</td></tr>
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FFFAFA';"><td bgcolor='#FFD700' >-</td><td title='-' id='#FFD700' onclick="zaznacz(this.title,pobierz(),this.id,pobierz1())">nieobecnosc</td></tr>
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FFFAFA';"><td bgcolor='#ADFF2F' >u</td><td title='u' id='#ADFF2F' onclick="zaznacz(this.title,pobierz(),this.id,pobierz1())">nieob. uspr.</td></tr>
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FFFAFA';"><td bgcolor='#FF6347' >n</td><td title='n' id='#FF6347' onclick="zaznacz(this.title,pobierz(),this.id,pobierz1())">nieob. nieusp.</td></tr>
+<tr onmouseover="this.style.backgroundColor='#D3D3D3'" onmouseout="this.style.backgroundColor='#FFFAFA';"><td bgcolor='#6495ED' >x</td><td title='x' id='#6495ED' onclick="zaznacz(this.title,pobierz(),this.id,pobierz1())">niecwiczacy</td></tr>
+</table>
+<form name='idN'><input type='hidden' id='zmienna'><input type='hidden' id='zmienna1'><input type='hidden' id='zmienna2'></form>
+<span style="float:right; margin-right:20px;margin-bottom:10px; cursor: pointer; text-decoration: underline" onclick="make_window('close',pobierz1())">Anuluj</span>
+</div>
+
+
+
+<form name='nieobecnosci' method='POST' action='/{{klasa}}/add/nieobecnosci/{% if data %}?date={{data}}{% endif %}'>
+	<table id='nb' border=1 class='table_oceny' cellspacing='0' cellpadding='0' width='850'>
+	<th class='user' rowspan=2>Lp.</th>
+	<th class='user' rowspan=2 width='35%'>Nazwisko i imię</th>
+	{% for day in tydzien %}
+	{% for num,name in day.items %}
+	<th colspan='{{godziny|length}}'>{{name}}</th>
+	{% endfor %}
+	{% endfor %}
+	<tr>
+	{%for day in tydzien%}
+	{% for g in godziny %}
+	<th class='user'>{{forloop.counter}}</th>
+	{% endfor %}{% endfor %}
+    </tr>
+	{% for u in klasa_obj.get_uczniowie %}
+	<tr id="{{u.numer}}">
+	<td>{{u.numer}}</td><td><a href="/site_media/{{u.get_photo_url}}" rel="lightbox" style="color:black">{{u.imie}} {{u.nazwisko}}</a></td>
+	{% for day in tydzien %}
+	{% for num,name in day.items %}
+	    {% for g in godziny %}
+		{% if num|sprawdz_plan:g %}
+		{{g.id|cach}}
+		<td class='aktywne' style='padding:0px;{{num|sprawdz_plan:g }}' align='center' title="{{u.numer}}" id="{{g.id}}-{{u.id}}-{{num}}" onclick="make_window('open',this.title,this.id,this)">
+		{{name|pobierz_nieobecnosci:u.id}}</td>
+		<input type='hidden' id="F_{{g.id}}-{{u.id}}-{{num}}" name="{{g.id}}-{{u.id}}-{{name}}" value='{{name|pobierz_nieobecnosci:u.id}}'>
+		{% else %}
+		<td class='nieaktywne' style='padding:0px;'> &nbsp; </td>
+		{% endif %}
+		{% endfor %}
+		{% endfor %}
+	{% endfor %}
+	</tr>
+	{% endfor %}
+	</table>
+<br><input type='submit' id='addcomm' value='Zapisz'> 
+</form>	
+
+{% endblock %}

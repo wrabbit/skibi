@@ -1,0 +1,1110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-15 19:46+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\boxcomments\models.py:16 
+#: .\userpanel\templates\userpanel\pmessage.html.py:13
+msgid "Text"
+msgstr ""
+
+#: .\boxcomments\models.py:23 
+msgid "Comment"
+msgstr ""
+
+#: .\boxcomments\models.py:24 
+msgid "Comments"
+msgstr ""
+
+#: .\boxcomments\views.py:64 
+msgid "No such entry"
+msgstr ""
+
+#: .\boxcomments\views.py:79 
+msgid "Captcha Error"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:3 
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:4
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:3
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:3
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:3
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:3
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:6
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:4
+#: .\templates\reg\pasword_change_done.html.py:3
+#: .\userpanel\templates\userpanel\panel.html.py:20
+msgid "Home"
+msgstr "Home"
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:12 
+msgid "dnia"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:12 
+msgid "Cytuj"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:13 
+msgid "Edytuj"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:19 
+#: .\boxcomments\templates\boxcomments\comments.html.py:48
+msgid "Dodaj komentarz"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:29 
+msgid "Nie moÅ¼esz dodaÄ trzech postÃ³w z rzÄdu"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:35 
+msgid "TytuÅ"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:39 
+#, fuzzy
+msgid "Komentarz"
+msgstr "Contact"
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:40 
+msgid "You can use"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:40 
+msgid "bold"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:40 
+msgid "italic"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:40 
+msgid "underline"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:40 
+msgid "quote"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:40 
+msgid "link"
+msgstr ""
+
+#: .\boxcomments\templates\boxcomments\comments.html.py:43 
+msgid "Tekst z grafiki"
+msgstr ""
+
+#: .\e_dziennik\formularz.py:46 
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\e_dziennik\models.py:22 .\ustawienia\models.py:40 
+msgid "Opis"
+msgstr "Description"
+
+#: .\e_dziennik\models.py:23 
+msgid "Numer klasy"
+msgstr ""
+
+#: .\e_dziennik\models.py:23 
+msgid "np. 2 lub II"
+msgstr ""
+
+#: .\e_dziennik\models.py:24 
+msgid "Litera"
+msgstr ""
+
+#: .\e_dziennik\models.py:53 
+msgid "Nazwa przedmiotu"
+msgstr ""
+
+#: .\e_dziennik\models.py:54 
+msgid "Nazwa skrocona"
+msgstr ""
+
+#: .\e_dziennik\models.py:60 .\templates\base_tresc.html.py:119 
+msgid "Przedmiot"
+msgstr ""
+
+#: .\e_dziennik\models.py:61 
+msgid "Lista przedmiotow"
+msgstr ""
+
+#: .\e_dziennik\models.py:100 
+msgid "zdjecie"
+msgstr ""
+
+#: .\e_dziennik\models.py:138 
+msgid "Wyslij do"
+msgstr ""
+
+#: .\e_dziennik\models.py:139 
+msgid "message"
+msgstr ""
+
+#: .\e_dziennik\models.py:140 
+msgid "Nadawca"
+msgstr ""
+
+#: .\e_dziennik\models.py:144 
+msgid "Wiadomosc"
+msgstr ""
+
+#: .\e_dziennik\models.py:145 
+msgid "Wiadomosci"
+msgstr ""
+
+#: .\e_dziennik\models.py:162 .\e_dziennik\models.py:184 
+msgid "klasa"
+msgstr ""
+
+#: .\e_dziennik\models.py:163 .\e_dziennik\models.py:185 
+#: .\e_dziennik\models.py:219
+msgid "przedmiot"
+msgstr ""
+
+#: .\e_dziennik\models.py:164 
+msgid "ocena"
+msgstr ""
+
+#: .\e_dziennik\models.py:165 
+msgid "waga"
+msgstr ""
+
+#: .\e_dziennik\models.py:166 .\e_dziennik\models.py:186 
+#: .\e_dziennik\models.py:231 .\e_dziennik\models.py:252
+msgid "Uczen"
+msgstr ""
+
+#: .\e_dziennik\models.py:169 
+msgid "dodana przez"
+msgstr ""
+
+#: .\e_dziennik\models.py:170 
+msgid "semestr"
+msgstr ""
+
+#: .\e_dziennik\models.py:172 .\e_dziennik\models.py:190 
+msgid "Ocena"
+msgstr ""
+
+#: .\e_dziennik\models.py:173 .\e_dziennik\models.py:191 
+#: .\templates\base_tresc.html.py:83 .\templates\base_tresc.html.py:97
+msgid "Oceny"
+msgstr "Notes"
+
+#: .\e_dziennik\models.py:183 
+msgid "Srednia"
+msgstr ""
+
+#: .\e_dziennik\models.py:188 .\templates\base_tresc.html.py:129 
+#: .\ustawienia\models.py:24
+msgid "Semestr"
+msgstr ""
+
+#: .\e_dziennik\models.py:208 
+msgid "Plik .xls z danymi"
+msgstr ""
+
+#: .\e_dziennik\models.py:209 
+msgid "Opis pliku"
+msgstr ""
+
+#: .\e_dziennik\models.py:211 
+msgid "Pliki z danymi"
+msgstr ""
+
+#: .\e_dziennik\models.py:221 
+msgid "Dzien tygodnia"
+msgstr ""
+
+#: .\e_dziennik\models.py:225 .\templates\base_tresc.html.py:87 
+#: .\templates\base_tresc.html.py:100
+msgid "Plan lekcji"
+msgstr "Timetable"
+
+#: .\e_dziennik\models.py:232 .\e_dziennik\models.py:275 
+msgid "Tresc"
+msgstr "Content"
+
+#: .\e_dziennik\models.py:235 
+msgid "Typ"
+msgstr ""
+
+#: .\e_dziennik\models.py:236 
+msgid "Potwierdzenie"
+msgstr ""
+
+#: .\e_dziennik\models.py:238 
+msgid "Uwaga"
+msgstr "Reprimand"
+
+#: .\e_dziennik\models.py:239 .\templates\base_tresc.html.py:85 
+#: .\templates\base_tresc.html.py:99
+msgid "Uwagi"
+msgstr "Reprimands"
+
+#: .\e_dziennik\models.py:257 
+msgid "Nieobecnosci"
+msgstr ""
+
+#: .\e_dziennik\models.py:273 
+msgid "Tytul"
+msgstr ""
+
+#: .\e_dziennik\models.py:274 
+msgid "Skrot"
+msgstr ""
+
+#: .\e_dziennik\models.py:279 .\e_dziennik\models.py:280 
+msgid "News"
+msgstr ""
+
+#: .\myghtyboard\models.py:13 
+msgid "Category Name"
+msgstr ""
+
+#: .\myghtyboard\models.py:14 
+msgid "Order"
+msgstr ""
+
+#: .\myghtyboard\models.py:16 
+msgid "Category"
+msgstr ""
+
+#: .\myghtyboard\models.py:17 
+msgid "Categories"
+msgstr ""
+
+#: .\myghtyboard\models.py:26 
+msgid "Forum Category"
+msgstr ""
+
+#: .\myghtyboard\models.py:27 
+msgid "Forum Name"
+msgstr ""
+
+#: .\myghtyboard\models.py:28 
+msgid "Forum Description"
+msgstr ""
+
+#: .\myghtyboard\models.py:29 .\myghtyboard\models.py:61 
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:20
+msgid "Topics"
+msgstr ""
+
+#: .\myghtyboard\models.py:30 .\myghtyboard\models.py:52 
+#: .\myghtyboard\models.py:80
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:21
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:12
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:16
+msgid "Posts"
+msgstr ""
+
+#: .\myghtyboard\models.py:31 .\myghtyboard\models.py:53 
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:22
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:13
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:17
+msgid "Last Post"
+msgstr ""
+
+#: .\myghtyboard\models.py:34 .\myghtyboard\models.py:49 
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:19
+#: .\templates\base_tresc.html.py:92 .\templates\base_tresc.html.py:102
+msgid "Forum"
+msgstr ""
+
+#: .\myghtyboard\models.py:35 
+msgid "Forums"
+msgstr ""
+
+#: .\myghtyboard\models.py:42 
+msgid "Stats"
+msgstr ""
+
+#: .\myghtyboard\models.py:50 
+msgid "Topic Title"
+msgstr ""
+
+#: .\myghtyboard\models.py:51 .\myghtyboard\models.py:75 
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:50
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:11
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:38
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:15
+msgid "Author"
+msgstr ""
+
+#: .\myghtyboard\models.py:55 
+msgid "Pagination Page"
+msgstr ""
+
+#: .\myghtyboard\models.py:60 
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:10
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:14
+msgid "Topic"
+msgstr ""
+
+#: .\myghtyboard\models.py:73 .\myghtyboard\models.py:79 
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:49
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:39
+msgid "Post"
+msgstr ""
+
+#: .\myghtyboard\views.py:88 
+msgid "User Topics"
+msgstr ""
+
+#: .\myghtyboard\views.py:94 
+msgid "You aren't logged in"
+msgstr ""
+
+#: .\myghtyboard\views.py:109 
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:68
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:59
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:6
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:41
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:21
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:42
+msgid "Last Active Topics"
+msgstr ""
+
+#: .\myghtyboard\views.py:137 
+msgid "User Posts in Latest Topics"
+msgstr ""
+
+#: .\myghtyboard\views.py:250 .\myghtyboard\views.py:332 
+msgid "Topic is closed"
+msgstr ""
+
+#: .\myghtyboard\views.py:257 
+msgid "You can't post after your post"
+msgstr ""
+
+#: .\myghtyboard\views.py:313 
+msgid " wrote"
+msgstr ""
+
+#: .\myghtyboard\views.py:358 
+msgid "You can't edit this post"
+msgstr ""
+
+#: .\myghtyboard\views.py:375 .\myghtyboard\views.py:395 
+#: .\myghtyboard\views.py:433 .\myghtyboard\views.py:449
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:52
+msgid "You aren't a moderator"
+msgstr ""
+
+#: .\myghtyboard\views.py:415 
+msgid "Topic Moved"
+msgstr ""
+
+#: .\myghtyboard\views.py:420 
+msgid "This topic has been moved to another forum. To see the topic follow"
+msgstr ""
+
+#: .\myghtyboard\views.py:420 
+msgid "this link"
+msgstr ""
+
+#: .\myghtyboard\views.py:421 
+msgid "Forum Staff"
+msgstr ""
+
+#: .\myghtyboard\views.py:465 
+msgid "You aren't a moderator and you aren't logged in"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:4 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:3
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:3
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:3
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:3
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:5
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:6
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:4
+msgid "Forum Index"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:8 
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:39
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:35
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:28
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:86
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:157
+msgid "Add Post"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:10 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:14
+msgid "Temat"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:14 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:18
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:10
+msgid "TreÅÄ wiadomoÅci"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:20 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:24
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:16
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:145
+msgid "Code Here"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:47 
+msgid "Last 10 posts from topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:66 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:57
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:4
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:39
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:19
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:40
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:8
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:5
+#, fuzzy
+msgid "Options"
+msgstr "Description"
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:69 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:60
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:7
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:42
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:22
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:43
+msgid "My Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_post.html.py:70 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:61
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:8
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:43
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:23
+#: .\myghtyboard\templates\myghtyboard\mytopics_list.html.py:44
+msgid "My Posts"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:12 
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:51
+msgid "Add Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:39 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:154
+msgid "Place code snippets inside [code][/code] tags !"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:44 
+msgid "Sticky"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\add_topic.html.py:48 
+msgid "Global"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:40 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:115
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:84
+msgid "You can post new Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:42 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:117
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:86
+msgid "You can't post new Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:45 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:121
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:89
+msgid "You can post new Posts"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:47 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:123
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:126
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:91
+msgid "You can't post new Posts"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\category_list.html.py:50 
+msgid "You are a Moderator"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\edit_post.html.py:8 
+msgid "Edit Post"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:7 
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:16
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:48
+msgid "Move Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:8 
+msgid "Select a forum to which the topic "
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\move_topic.html.py:8 
+msgid "should be moved"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:10 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:93
+msgid "First Page"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:15 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:98
+msgid "Previous Page"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:19 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:102
+msgid "Next Page"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:24 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:107
+msgid "Last Page"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:45 
+#: .\userpanel\templates\userpanel\pmessage.html.py:17
+#: .\userpanel\templates\userpanel\userlist.html.py:16
+msgid "Send Message"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:52 
+msgid "Reply with quote"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:57 
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:62
+msgid "Edit this post"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:70 
+msgid "Delete This Post?"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:70 
+msgid "Delete this post"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:129 
+msgid "You can moderate this Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:131 
+msgid "You can't moderate this Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:138 
+msgid "Quick Post"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:140 
+msgid "Bold"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:141 
+msgid "Italic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:142 
+msgid "Underline"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:143 
+#, fuzzy
+msgid "Image"
+msgstr "First name"
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:144 
+msgid "Blockquote"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:145 
+msgid "Code"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\post_list.html.py:159 
+msgid "Allowed HTML Tags"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:5 
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:78
+msgid "Add New Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:18 
+msgid "Admin"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:41 
+msgid "Delete this Topic and all Posts?"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:41 
+msgid "Delete Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:43 
+msgid "Open This Topic?"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:43 
+msgid "Unlock Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:45 
+msgid "Close This Topic?"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:45 
+msgid "Lock Topic"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:59 
+msgid "Latest Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:64 
+msgid "Newer Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:68 
+msgid "Older Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:73 
+msgid "Oldest Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:94 
+msgid "You can moderate this Topics"
+msgstr ""
+
+#: .\myghtyboard\templates\myghtyboard\topics_list.html.py:96 
+msgid "You can't moderate this Topics"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:14 
+msgid "Wyloguj"
+msgstr "Logout"
+
+#: .\templates\base_tresc.html.py:15 
+msgid "Moje uprawnienia"
+msgstr "My permissions"
+
+#: .\templates\base_tresc.html.py:16 
+#, fuzzy
+msgid "Zmiana hasÅa"
+msgstr "Change password"
+
+#: .\templates\base_tresc.html.py:17 
+#, fuzzy
+msgid "Historia zdarzeÅ"
+msgstr "Last action"
+
+#: .\templates\base_tresc.html.py:18 
+msgid "Panel uÅ¼ytkownika"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:27 
+msgid "Ostatnie logowanie"
+msgstr "Last loged"
+
+#: .\templates\base_tresc.html.py:28 
+#, fuzzy
+msgid "Data przyÅÄczenia"
+msgstr "Date joined"
+
+#: .\templates\base_tresc.html.py:84 .\templates\base_tresc.html.py:98 
+#, fuzzy
+msgid "NieobecnoÅci"
+msgstr "Absences"
+
+#: .\templates\base_tresc.html.py:86 
+#, fuzzy
+msgid "Tematy zajÄÄ"
+msgstr "Subjects lessons"
+
+#: .\templates\base_tresc.html.py:88 
+#, fuzzy
+msgid "Lista uczniÃ³w"
+msgstr "Learners list"
+
+#: .\templates\base_tresc.html.py:89 
+#, fuzzy
+msgid "Lista przedmiotÃ³w"
+msgstr "Objects list"
+
+#: .\templates\base_tresc.html.py:90 
+msgid "Raporty"
+msgstr "Reports"
+
+#: .\templates\base_tresc.html.py:91 .\templates\base_tresc.html.py:101 
+msgid "AktualnoÅci"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:107 
+#, python-format
+msgid " %(header)s "
+msgstr ""
+
+#: .\templates\base_tresc.html.py:111 
+msgid "Klasa"
+msgstr "Class"
+
+#: .\templates\base_tresc.html.py:112 
+msgid "Wychowawca"
+msgstr "Educator"
+
+#: .\templates\base_tresc.html.py:122 
+#, python-format
+msgid "%(przedmiot)s"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:132 
+#, python-format
+msgid "Oceny za semestr %(numer)s  "
+msgstr "Notes for semester %(numer)s "
+
+#: .\templates\base_tresc.html.py:147 
+#, fuzzy
+msgid " chÅopcy"
+msgstr " boys"
+
+#: .\templates\base_tresc.html.py:148 
+msgid " dziewczyny"
+msgstr " girls"
+
+#: .\templates\base_tresc.html.py:174 
+msgid "Czytaj wiecej"
+msgstr "Read more"
+
+#: .\templates\base_tresc.html.py:175 
+msgid "Komentarze"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:180 
+msgid "Poprzednie"
+msgstr "Previous"
+
+#: .\templates\base_tresc.html.py:181 
+msgid "Nastepne"
+msgstr "Next"
+
+#: .\templates\base_tresc.html.py:193 
+msgid "Imie"
+msgstr "First name"
+
+#: .\templates\base_tresc.html.py:193 .\templates\base_tresc.html.py:227 
+#: .\templates\base_tresc.html.py:262
+msgid "Nazwisko"
+msgstr "Last name"
+
+#: .\templates\base_tresc.html.py:193 
+msgid "Pozytywne"
+msgstr "Positive"
+
+#: .\templates\base_tresc.html.py:193 
+msgid "Negatywne"
+msgstr "Negative"
+
+#: .\templates\base_tresc.html.py:210 .\ustawienia\models.py:78 
+msgid "Nazwa"
+msgstr "Name"
+
+#: .\templates\base_tresc.html.py:210 
+msgid "Nauczyciel(grupa)"
+msgstr "Teacher (groups)"
+
+#: .\templates\base_tresc.html.py:210 
+msgid "ObowiÄzkowy"
+msgstr "Is required"
+
+#: .\templates\base_tresc.html.py:220 
+msgid "Dodaj nowy przedmiot"
+msgstr "Add new object"
+
+#: .\templates\base_tresc.html.py:227 .\templates\base_tresc.html.py:260 
+msgid "ImiÄ"
+msgstr "First Name"
+
+#: .\templates\base_tresc.html.py:227 
+msgid "Utworzono"
+msgstr "Created"
+
+#: .\templates\base_tresc.html.py:227 
+msgid "Grupa jÄzykowa"
+msgstr "Group language"
+
+#: .\templates\base_tresc.html.py:227 
+msgid "Login opiekuna"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:237 
+msgid "Dodaj nowego ucznia"
+msgstr "Add new learner"
+
+#: .\templates\base_tresc.html.py:238 .\templates\base_tresc.html.py:249 
+msgid "Wczytaj plik z danymi"
+msgstr "Upload file"
+
+#: .\templates\base_tresc.html.py:239 
+msgid "Zestawienie ocen"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:248 
+msgid "Dodaj"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:264 
+msgid "Numer"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:273 
+msgid "Wpis zostaÅ usuniÄty"
+msgstr ""
+
+#: .\templates\base_tresc.html.py:282 
+msgid "Kontakt"
+msgstr "Contact"
+
+#: .\templates\base_tresc.html.py:284 
+#, fuzzy
+msgid "WyÅlij e-mail"
+msgstr "Send e-mail"
+
+#: .\templates\base_tresc.html.py:285 
+#, fuzzy
+msgid "WiadomoÅci"
+msgstr "Messages"
+
+#: .\templates\bug.html.py:6 
+msgid "Main Page"
+msgstr ""
+
+#: .\templates\plan_add.html.py:7 
+#, fuzzy
+msgid "Dodaj lekcjÄ"
+msgstr "Add lesson"
+
+#: .\templates\uwagi_form.html.py:9 
+msgid "WyÅwietl uwagi"
+msgstr ""
+
+#: .\templates\msg\email_newsform.html.py:7 
+msgid "Wyslij e-mail"
+msgstr "Send e-mail"
+
+#: .\templates\msg\email_send_done.html.py:7 
+msgid "Email send  successful"
+msgstr ""
+
+#: .\templates\msg\email_send_done.html.py:9 
+msgid "Your email was send"
+msgstr ""
+
+#: .\templates\msg\message_send_done.html.py:7 
+msgid "Wystapil blad, wiadomosc nie zostala wyslana"
+msgstr ""
+
+#: .\templates\msg\message_send_done.html.py:10 
+msgid "Wiadomosc wyslana"
+msgstr "Message send"
+
+#: .\templates\msg\message_send_done.html.py:11 
+msgid "Twoja wiadomosci zostala wyslana"
+msgstr "Your message was send"
+
+#: .\templates\msg\message_send_form.html.py:7 
+msgid "Wyslij wiadomosc"
+msgstr "Send message"
+
+#: .\templates\reg\pasword_change_done.html.py:3 
+#: .\templates\reg\pasword_change_form.html.py:4
+#: .\templates\reg\pasword_change_form.html.py:12
+msgid "Password change"
+msgstr ""
+
+#: .\templates\reg\pasword_change_done.html.py:5 
+#: .\templates\reg\pasword_change_done.html.py:9
+msgid "Password change successful"
+msgstr ""
+
+#: .\templates\reg\pasword_change_done.html.py:11 
+msgid "Your password was changed."
+msgstr ""
+
+#: .\templates\reg\pasword_change_form.html.py:8 
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: .\templates\reg\pasword_change_form.html.py:15 
+msgid "Old password:"
+msgstr ""
+
+#: .\templates\reg\pasword_change_form.html.py:18 
+msgid "New password:"
+msgstr ""
+
+#: .\templates\reg\pasword_change_form.html.py:21 
+msgid "Confirm password:"
+msgstr ""
+
+#: .\templates\reg\pasword_change_form.html.py:24 
+msgid "Change my password"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\my_perm.html.py:6 
+#: .\userpanel\templates\userpanel\panel.html.py:11
+msgid "My Permissions"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\panel.html.py:6 
+#: .\userpanel\templates\userpanel\panel.html.py:20
+msgid "User Panel"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\panel.html.py:10 
+msgid "Logout"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\panel.html.py:12 
+msgid "Change Password"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\panel.html.py:13 
+msgid "User List"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\panel.html.py:14 
+msgid "Contact Site Admin"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\pmessage.html.py:6 
+msgid "Send a Private Message"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\pmessage.html.py:9 
+msgid "Subject"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\profile_pmessage.html.py:8 
+msgid "Messages Settings"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\profile_pmessage.html.py:10 
+msgid "Allow messages from users"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\profile_pmessage.html.py:13 
+msgid "Save"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\userlist.html.py:6 
+#: .\ustawienia\models.py:10
+msgid "Login"
+msgstr "Login"
+
+#: .\userpanel\templates\userpanel\userlist.html.py:7 
+msgid "First name"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\userlist.html.py:8 
+msgid "Last name"
+msgstr ""
+
+#: .\userpanel\templates\userpanel\userlist.html.py:9 
+msgid "Actions"
+msgstr ""
+
+#: .\ustawienia\models.py:8 
+msgid "Obszar"
+msgstr ""
+
+#: .\ustawienia\models.py:9 
+msgid "Liczba kolumn"
+msgstr ""
+
+#: .\ustawienia\models.py:11 
+msgid "Haslo"
+msgstr "Password"
+
+#: .\ustawienia\models.py:25 .\ustawienia\models.py:41 
+msgid "Data rozpoczecia"
+msgstr "Begin date"
+
+#: .\ustawienia\models.py:26 .\ustawienia\models.py:42 
+msgid "Data zakonczenia"
+msgstr "End date"
+
+#: .\ustawienia\models.py:60 
+msgid "Poczatek zajec"
+msgstr "Begin lesson"
+
+#: .\ustawienia\models.py:61 
+msgid "Koniec zajec"
+msgstr "End lesson"
+
+#: .\ustawienia\models.py:77 
+msgid "Numer sali"
+msgstr "Classroom number"
+
+#: .\ustawienia\models.py:94 
+msgid "Waga"
+msgstr "Notes waight"
+
+#: .\ustawienia\models.py:95 
+msgid "Obszar oceniania"
+msgstr "Area rating"
+
+#: .\ustawienia\models.py:96 
+msgid "Kolor"
+msgstr "Color"
+
+#: .\ustawienia\models.py:111 
+msgid "Wartosc do obliczen"
+msgstr "Value for count"
+
+#: .\ustawienia\models.py:112 
+msgid "Nazwa oceny"
+msgstr ""
+
+#: .\ustawienia\models.py:127 
+msgid "Nazwa grupy"
+msgstr ""
+
+#~ msgid "German"
+#~ msgstr "Niemiecki"
+
+#~ msgid "English"
+#~ msgstr "Angielski"
+
+#~ msgid "Polish"
+#~ msgstr "Polski"
+
+#~ msgid "Demo"
+#~ msgstr "Demo"

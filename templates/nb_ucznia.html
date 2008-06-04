@@ -1,0 +1,26 @@
+{% extends "base_tresc.html" %}
+{% load ustawienia_extras %}
+{% block content %}
+
+<table border=0>
+<tr><td style='background:#FFD700;width:10px;border:1px solid #304B90;'>&nbsp;</td>
+<td> - zobacz szczegóły</td>
+</tr>
+</table>
+<table border=0 cellspacing='20px'>
+<tr>
+{% for num in months_num %}
+<td valign='top'>{{ dziecko|kalendarz:num }}</td>
+{% if num|porownaj %}
+</tr>
+<tr>
+{% endif %}
+{% if num|porownaj %}
+</tr>
+<tr>
+{% endif %}
+{% endfor %}
+</tr>
+</table>
+
+{% endblock %}

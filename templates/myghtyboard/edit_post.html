@@ -1,0 +1,45 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/forum/">{% trans "Forum Index" %}</a>{% endblock %}
+
+{% block content %}
+<form method="post" action=".">
+<table cellspacing='1' border=1 rules='none'>
+		  <th colspan=2 class='user2'><b>{% trans "Edit Post" %}</b></th>
+            <tr class="rowB">
+              <td id='mini'><b>{% trans "Treść wiadomości" %}</b></td>
+              <td>
+            <input type="button" class="button" value=" B " style="font-weight:bold; width: 30px" onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<b></b>"'/>	
+            <input type="button" class="button" value=" i " style="font-style:italic; width: 30px" onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<i></i>"'/>
+            <input type="button" class="button" value=" u " style="text-decoration: underline; width: 30px" onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<u></u>"'/>
+            <input type="button" class="button" value="Quote" style="width: 50px" onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<blockquote></blockquote>"'/>
+            <input type="button" class="button" value="Code" style="width: 40px" onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"[code]{% trans "Code Here" %}[/code]"'/>
+            <input type="button" class="button" value="List" style="width: 40px" />
+            <input type="button" class="button" value="List=" style="width: 40px" />
+            <input type="button" class="button" value="Img" style="width: 40px" onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<img src=\"URL\" alt=\"\" />"'/>
+            <input type="button" class="button" value="URL" style="width: 40px" />
+            <input type="button" class="button" value="Center" style="width: 60px" />
+			
+				<div id='mini'><b>Emotikony</b></div>
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':omg:' "><img src="/site_media/forum/smilies/icon_eek.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':nice:' "><img src="/site_media/forum/smilies/icon_biggrin.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':evil:' "><img src="/site_media/forum/smilies/icon_evil.gif" alt="" /></a>
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':twisted:' "><img src="/site_media/forum/smilies/icon_twisted.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':grin:' "><img src="/site_media/forum/smilies/icon_cheesygrin.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':cool:' "><img src="/site_media/forum/smilies/icon_cool.gif" alt="" /></a> 
+			<br />
+			<textarea rows="10" cols="60" name="post_text" id="id_text">{% if post_text %}{{ post_text }}{% endif %}</textarea>
+			{% if form.post_text.errors %}{{ form.post_text.errors }}{% endif %}
+              </td>
+            </tr>
+			<tr class="rowA"><td colspan='2'><input type="submit" id='addcomm' value="{% trans 'Add Post' %}" style="actiontable" /></td></tr>
+</table>
+</form>
+{% endblock %}
+{% block right %}{% if perms.is_authenticated %}<h4>{% trans "Options" %}</h4>
+<ul>
+<li><img src='/site_media/images/img12.gif' border=0> <a href="/forum/lasttopics/">{% trans "Last Active Topics" %}</a></li>
+<li><img src='/site_media/images/img12.gif' border=0> <a href="/forum/mytopics/">{% trans "My Topics" %}</a></li>
+<li><img src='/site_media/images/img12.gif' border=0> <a href="/forum/myptopics/">{% trans "My Posts" %}</a></li>
+</ul>
+{% endif %}{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "pages/body.html" %}
+{% load i18n %}
+{% block content %}
+<br />
+<h2>{% trans "User Profile" %}</h2>
+	<div class="box">
+	<ul>
+	<li><a href="/user/login/?log=out"><b>{% trans "Logout" %}</b></a></li>
+	<li><a href="/user/edit/"><b>{% trans "Messages Settings" %}</b></a></li>
+	<li><a href="/user/password_change/"><b>{% trans "Change Password" %}</b></a></li>
+	</ul>
+	<ul>
+	<li><a href="/user/userlist/"><b>{% trans "User List" %}</b></a></li>
+	<li><a href="mailto:riklaunim@gmail.com"><b>{% trans "Contact Site Admin" %}</b></a></li>
+	</ul>
+</div>
+{% endblock %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/user/">{% trans "User Panel" %}</a>{% endblock %}

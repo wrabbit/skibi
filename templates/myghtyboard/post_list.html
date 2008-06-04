@@ -1,0 +1,163 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+{% load fbc %}
+{% block title %}{{ forum_name }} - {{ topic }}{% endblock %}
+{% block header %}{{ forum_name }} - {{ topic }}{% endblock %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/forum/">{% trans "Forum Index" %}</a> > <a href="/forum/forum/{{ forum_id }}/">{{ forum_name }}</a> > <a href="/forum/topic/1/{{ topic_id }}">{{ topic }}</a>{% endblock %}
+
+{% block right %}<h3>{% trans "Options" %}</h3><ul>{% ifnotequal pages 0 %}
+			{% ifnotequal pages 1 %}
+			<li><a href="/forum/topic/1/{{ topic_id }}/">{% trans "First Page" %}</a></li>
+			{% endifnotequal %}
+			{% endifnotequal %}
+			
+			{% if has_previous %}
+				<li><a href="/forum/topic/{{ previous }}/{{ topic_id }}/">{% trans "Previous Page" %} </a></li>
+			{% endif %}
+			
+			{% if has_next %}
+			<li><a href="/forum/topic/{{ next }}/{{ topic_id }}/"> {% trans "Next Page" %}</a></li>
+			{% endif %}
+			
+			{% ifnotequal pages 0 %}
+			{% ifnotequal pages 1 %}
+			<li><a href="/forum/topic/{{ pages }}/{{ topic_id }}/">{% trans "Last Page" %}</a></li>
+			{% endifnotequal %}
+			{% endifnotequal %}
+			{% if opened %}
+	<li><img src='/site_media/images/icon_addlink.gif' border=0> <a href="/forum/add_post/{{ topic_id }}/">{% trans "Add Post" %}</a></li>
+	{% endif %}</ul>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+          <table cellspacing='1' border=1 rules='none' width='100%'>
+		  <th colspan=5 class='user1'><b>{{ topic}}</b></th>
+            <tr>
+              
+              <th class="user2" width="20%"><strong>{% trans "Author" %}</strong></th>
+			  <th class="user2"><strong>{% trans "Post" %}</strong></th>
+            </tr>
+	{% for i in object_list %}
+	<tr class="{% cycle rowA,rowB %}"> 
+		<td id='mini'>
+		{{ i.post_author }} {% if perms.is_staff %}({{ i.post_ip }}){% endif %}<br />
+		<!--<a href="/user/pmessage/{{ i.post_author }}/">{% trans "Send Message" %}</a>-->
+	</td>
+	<td class="first" style="text-align:justify;">
+	{% if perms.add_post %}
+	
+		{% if opened %}
+			<p id='mini' style='border-bottom:1px solid white;'>Wysłany: {{ i.post_date|date:"d.m.Y H:m:s" }} |
+						<a style='padding-left:0px' href="/forum/add_post/{{ topic_id }}/{{ i.id }}/">{% trans "Reply with quote" %}</a> |
+
+		{% ifequal i.post_author current_user %}
+		{% if opened %}
+			{% ifnotequal i.post_author "AnonymousUser" %}
+				<a href="/forum/edit_post/{{ i.id }}/">{% trans "Edit this post" %}</a> |
+			{% endifnotequal %}
+		{% endif %} 
+		{% else %}
+		{% if perms.is_staff %}
+			<a href="/forum/edit_post/{{ i.id }}/">{% trans "Edit this post" %}</a> |
+		{% endif %}
+		{% endifequal %}
+			
+		{% endif %}
+		{% endif %}
+
+		{% if perms.is_staff %}
+			<a href="/forum/delete_post/{{ i.id }}/{{ topic_id }}/" onclick="return confirm('{% trans "Delete This Post?" %}')">{% trans "Delete this post" %}</a>
+		{% endif %}
+		</p>
+		<br />{{ i.post_text|fbc|urlizetrunc:"60" }}
+	</td>
+	
+
+</tr>
+{% endfor %}
+</table>
+</div>
+
+
+	<div class="box">
+	{% if perms.add_post %}
+		{% if opened %}
+		<p style="text-align:right;"><a href="/forum/add_post/{{ topic_id }}/"><b>{% trans "Add Post" %}</b></a></p>
+		{% endif %}
+	{% endif %}
+
+			<div style="text-align:center;">
+			{% ifnotequal pages 0 %}
+			{% ifnotequal pages 1 %}
+			<a href="/forum/topic/1/{{ topic_id }}/"><b>{% trans "First Page" %}</b></a> | 
+			{% endifnotequal %}
+			{% endifnotequal %}
+			
+			{% if has_previous %}
+				<a href="/forum/topic/{{ previous }}/{{ topic_id }}/"><b>{% trans "Previous Page" %} </b></a>
+			{% endif %}
+			
+			{% if has_next %}
+			<a href="/forum/topic/{{ next }}/{{ topic_id }}/"><b> {% trans "Next Page" %}</b></a>
+			{% endif %}
+			
+			{% ifnotequal pages 0 %}
+			{% ifnotequal pages 1 %}
+			 | <a href="/forum/topic/{{ pages }}/{{ topic_id }}/"><b>{% trans "Last Page" %}</b></a>
+			{% endifnotequal %}
+			{% endifnotequal %}
+			</div>
+	</div>
+	<div class="box">
+	<p style="text-align:right;">
+		{% if perms.add_topic %}
+			- {% trans "You can post new Topics" %}<br />
+		{% else %}
+			- {% trans "You can't post new Topics" %}<br />
+		{% endif %}
+		{% if perms.add_post %}
+			{% if opened %}
+				- {% trans "You can post new Posts" %}<br />
+			{% else %}
+				- {% trans "You can't post new Posts" %}<br />
+			{% endif %}
+		{% else %}
+			- {% trans "You can't post new Posts" %}<br />
+		{% endif %}
+		{% if perms.is_staff %}
+			- {% trans "You can moderate this Topic" %}<br />
+		{% else %}
+			-  {% trans "You can't moderate this Topic" %}<br />
+		{% endif %}
+	</p>
+	</div>
+<!--
+{% if perms.add_post %}
+{% if opened %}<br /><br />
+<h2>{% trans "Quick Post" %}</h2>
+<div class="box"><div style="text-align:center;"><form method="post" action="/forum/add_post/{{ topic_id }}/">
+<a onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<b></b>"'>{% trans "Bold" %}</a>,
+			<a onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<i></i>"'>{% trans "Italic" %}</a>, 
+			<a onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<u></u>"'>{% trans "Underline" %}</a>, 
+			<a onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<img src=\"URL\" alt=\"\" />"'>{% trans "Image" %}</a>,
+			<a onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"<blockquote></blockquote>"'>{% trans "Blockquote" %}</a>,
+			<a onclick='document.getElementById("id_text").value=document.getElementById("id_text").value+"[code]{% trans "Code Here" %}[/code]"'>{% trans "Code" %}</a> 
+				<br />
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':omg:' "><img src="/site_media/layout/forum/smilies/icon_eek.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':nice:' "><img src="/site_media/layout/forum/smilies/icon_biggrin.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':evil:' "><img src="/site_media/layout/forum/smilies/icon_evil.gif" alt="" /></a>
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':twisted:' "><img src="/site_media/layout/forum/smilies/icon_twisted.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':grin:' "><img src="/site_media/layout/forum/smilies/icon_cheesygrin.gif" alt="" /></a> 
+				<a onclick="document.getElementById('id_text').value=document.getElementById('id_text').value+ ':cool:' "><img src="/site_media/layout/forum/smilies/icon_cool.gif" alt="" /></a> 
+<br />
+<div class="box">{% trans "Place code snippets inside [code][/code] tags !" %}</div>
+<textarea rows="7" cols="70" name="post_text" id="id_text"></textarea>
+</div></div>
+<div class="box"><br /><div style="text-align:center;"><input type="submit" value="{% trans "Add Post" %}" style="actiontable"></div>
+</form>
+<br /><b>{% trans "Allowed HTML Tags" %}</b>: b, a, i, br, p, u, img, li, ul, ol, center, sub, sup, cite, blockquote<br /><br /></div>
+
+{% endif %}{% endif %}
+-->
+{% endblock %}

@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-02 15:57+0200\n"
+"PO-Revision-Date: 2005-09-28 12:52+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:7
+msgid "Text"
+msgstr "Tekst"
+
+#: models.py:14 templates/boxcomments/comments.html:18
+msgid "Comment"
+msgstr "Komentarz"
+
+#: models.py:15
+msgid "Comments"
+msgstr "Komentarze"
+
+#: views.py:18
+msgid "Captcha Error."
+msgstr "Błąd Captcha"
+
+#: templates/boxcomments/comments.html:2
+msgid "Home"
+msgstr "Biblioteka"
+
+#: templates/boxcomments/comments.html:4
+msgid "Here you can read all comments for"
+msgstr "Tutaj możesz przeczytać wszystkie komentarze dla"
+
+#: templates/boxcomments/comments.html:4
+msgid ""
+"You can add your comment using the form below. Please do not ask for help - "
+"use <b>Forums</b> for help and support."
+msgstr ""
+"Możesz dodać komentarz korzystając z formularza poniżej. Nie proś o pomoc - "
+"od tego jest <b>Forum</b>."
+
+#: templates/boxcomments/comments.html:7
+msgid "on"
+msgstr "dnia"
+
+#: templates/boxcomments/comments.html:7
+msgid "Quote"
+msgstr "Cytuj"
+
+#: templates/boxcomments/comments.html:8
+msgid "Admin"
+msgstr "Admin"
+
+#: templates/boxcomments/comments.html:12
+msgid "No Comments"
+msgstr "BRAK KOMENTARZY"
+
+#: templates/boxcomments/comments.html:14
+msgid "You can't post 3 comments in a row"
+msgstr "Nie możesz dodać 3 komentarza z rzędu"
+
+#: templates/boxcomments/comments.html:14
+#: templates/boxcomments/comments.html:27
+msgid "Add Comment"
+msgstr "Dodaj Komentarz"
+
+#: templates/boxcomments/comments.html:19
+msgid "You can use"
+msgstr "Możesz użyć"
+
+#: templates/boxcomments/comments.html:19
+msgid "bold"
+msgstr "pogrubienie"
+
+#: templates/boxcomments/comments.html:19
+msgid "italic"
+msgstr "kursywa"
+
+#: templates/boxcomments/comments.html:19
+msgid "underline"
+msgstr "podkreślenie"
+
+#: templates/boxcomments/comments.html:19
+msgid "quote"
+msgstr "cytat"
+
+#: templates/boxcomments/comments.html:19
+msgid "link"
+msgstr "odnośnik"
+
+#: templates/boxcomments/comments.html:22
+msgid "Text from the image"
+msgstr "Tekst z grafiki"
+
+#~ msgid "See commented Task"
+#~ msgstr "Zobacz komentowane Zadanie"
+
+#~ msgid "See commented Page"
+#~ msgstr "Zobacz komentowaną Stronę"
+
+#~ msgid "See commented News"
+#~ msgstr "Zobacz komentowaną Wiadomość"
+
+#~ msgid "See commented Translation"
+#~ msgstr "Zobacz komentowane Tłumaczenie"
+
+#~ msgid "See commented Character"
+#~ msgstr "Zobacz komentowaną Postać"
+
+#~ msgid "Login to add comment"
+#~ msgstr "Zaloguj się by móc dodać komentarz"
+
+#~ msgid "Allowed HTML Tags"
+#~ msgstr "Dozwolone Tagi HTML"

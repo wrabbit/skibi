@@ -1,0 +1,27 @@
+{% extends "base_tresc.html" %}
+{% block content %}
+{% load i18n %}
+
+<br><form method="post" action=".">
+<table border=0 rules='none' class='table_user' cellspacing='0' cellpadding='0'>
+<th colspan=2 class='user1'>{% trans "Dodaj lekcję" %}</th>
+<tr><td><br></td></tr>
+
+{% for field in f %}
+<tr>
+    <td id='mini'>
+	<label for="{{ field.label }}"><b>{{ field.label_tag }}</b>
+	{% if field.field.required %}<span class="requireds">*</span>{% endif %}</label>
+	{% if field.help_text %}<br>{{ field.help_text }}{% endif %}
+	</td>
+    <td>{{ field }}{% if field.errors %}<div id='img_error'>{{ field.errors|join:", "}}</div></td>{% endif %}
+</tr>
+{% endfor %}
+<tr><td><input type="submit" value="Zapisz" id="addcomm"></td>
+{% if exist %}
+<td align='center'><a href ='/{{klasa}}/Plan/del/{%for i in exist%}{{i.id}}{%endfor%}'><img src='/site_media/images/icon_deletelink.gif' border=0> Usuń</a></td>
+{% endif %}
+</tr>
+</table></form>
+
+{% endblock %}

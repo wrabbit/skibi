@@ -1,0 +1,37 @@
+{% extends "pages/body.html" %}
+{% load i18n %}
+{% block content %}
+<h2>{% trans "Register" %}</h2><form action="." method="post"><input type="hidden" value="{{ hash }}" name="imghash" />
+{% if error %}
+	<div style="text-align:center;" class="box"><b>{% trans "Registration Error" %}</b></div>
+{% endif %}
+<div class="content">
+          <table>
+            <tr class="rowA">
+              <td class="first" style="width:35%;"><b>{% trans "Login" %}</b><br />{% trans "required, more than 3 chars<br />letters or numbers" %}</td>
+              <td>{{ form.login }}{% if form.login.errors %}<br />*** {{ form.login.errors|join:", " }}{% endif %}{% ifnotequal sid 6 %}<br />Bez polskich liter{% endifnotequal %}</td>
+            </tr>
+            <tr class="rowB">
+              <td><b>{% trans "Password" %}</b><br />{% trans "required, more than 4 chars<br />letters or numbers" %}</td>
+              <td>{{ form.password1 }}{% if form.password1.errors %}<br />*** {{ form.password1.errors|join:", " }}{% endif %}</td>
+            </tr>
+            <tr class="rowA">
+              <td><b>{% trans "Password Again" %}</b><br />{% trans "required, enter the same password" %}</td>
+              <td>{{ form.password2 }}{% if form.password2.errors %}<br />*** {{ form.password2.errors|join:", " }}{% endif %}</td>
+            </tr>
+            <tr class="rowB">
+              <td><b>{% trans "Email" %}</b><br />{% trans "required, your email addres" %}</td>
+              <td>{{ form.email }}{% if form.email.errors %}<br />*** {{ form.email.errors|join:", " }}{% endif %}</td>
+            </tr>
+            <tr class="rowB">
+              <td><b>{% trans "Text from the image" %}</b></td>
+              <td>{{ form.imgtext }}{% if form.imgtext.errors %}<br />*** {{ form.imgtext.errors|join:", " }}{% endif %}<br /><img src="/site_media/captcha/{{ user }}.jpg" alt=""></td>
+            </tr>
+          </table>
+</div>
+
+<br /><div class="box"><br /><div style="text-align:center;"><input type="submit" value="{% trans "Register My" %}" class="actiontable"></div><br /></div>
+</form>
+{% endblock %}
+{% block meta %}<meta http-equiv="Pragma" content="no-cache" />{% endblock %}
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/user/">{% trans "User Panel" %}</a>{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "base_tresc.html" %}
+{% load i18n %}
+
+{% block crumb %}<a href="/">{% trans "Home" %}</a> > <a href="/forum/">{% trans "Forum Index" %}</a> > <a href="/forum/forum/{{ forum }}/">{{ forum_name }}</a>{% endblock %}
+{% block right %}<h3>{% trans "Options" %}</h3><ul><li><img src='/site_media/images/icon_addlink.gif' border=0> <a href="/forum/add_topic/{{ forum }}/">{% trans "Add New Topic" %}</a></li></ul>{% endblock %}
+
+{% block content %}
+
+<div class="content">
+          <table cellspacing='1' border=1 rules='none' width='100%'>
+		  <th colspan=6 class='user1'><b>{{ forum_name }}</b></th>
+            <tr>
+              <th class='user2' style="width:20px;"></th>
+              <th class='user2'><strong>{% trans "Topic" %}</strong></th>
+              <th class='user2' style="width:90px;"><strong>{% trans "Author" %}</strong></th>
+              <th class='user2' style="width:20px;"><strong>{% trans "Posts" %}</strong></th>
+              <th class='user2' style="width:140px;"><strong>{% trans "Last Post" %}</strong></th>
+              {% if perms.is_staff %}<th class='user2' style="width:25%;"><strong>{% trans "Admin" %}</strong></th>{% endif %}
+            </tr>
+           {% for topic in object_list %}
+            <tr class="{% cycle rowA,rowB %}">
+           <td class="first">
+{% if topic.is_locked %}
+	<img src="/site_media/forum/lock.gif" alt="*" />
+{% else %}
+	{% if topic.is_sticky %}
+		<img src="/site_media/forum/stick.gif" alt="*" />
+	{% else %}
+		{% if topic.is_global %}
+			<img src="/site_media/forum/glob.gif" alt="*" />
+		{% else %}
+			<img src="/site_media/forum/school.gif" alt="*" />
+		{% endif%}
+	{% endif%}
+{% endif %}</td>
+              <td><a href="/forum/topic/{{ topic.topic_last_pagination_page }}/{{ topic.id }}/"><b>{{ topic.topic_name }}</b></a></td>
+              <td id='mini'>{{ topic.topic_author }}</td>
+              <td id='mini' align='center'>{{ topic.topic_posts }}</td>
+              <td id='mini'>{{ topic.topic_lastpost }}</td>
+{% if perms.is_staff %}<td>
+	<a href="/forum/delete_topic/{{ topic.id }}/{{ forum }}/" onclick="return confirm('{% trans "Delete this Topic and all Posts?" %}')">{% trans "Delete Topic" %}</a> | 
+	{% if topic.is_locked %}
+		<a href="/forum/open_topic/{{ topic.id }}/{{ forum }}/" onclick="return confirm('{% trans "Open This Topic?" %}')">{% trans "Unlock Topic" %}</a>
+	{% else %}
+		<a href="/forum/close_topic/{{ topic.id }}/{{ forum }}/" onclick="return confirm('{% trans "Close This Topic?" %}')">{% trans "Lock Topic" %}</a>
+	{% endif %}
+	{% ifnotequal topic.is_locked 1 %}
+	 | <a href="/forum/move_topic/{{ topic.id }}/{{ forum }}/">{% trans "Move Topic" %}</a>
+	 {% endifnotequal %}</td>
+{% endif %}
+            </tr>
+	    {% endfor %}
+          </table>
+</div>
+<br />
+<div class="box" style="text-align:center;">
+{% ifnotequal pages 0 %}
+{% ifnotequal pages 1 %}
+<a href="/forum/forum/{{ forum }}/"><b>{% trans "Latest Topics" %}</b></a> | 
+{% endifnotequal %}
+{% endifnotequal %}
+
+{% if has_previous %}
+	<a href="/forum/forum/{{ forum }}/{{ previous }}/"><b>{% trans "Newer Topics" %} </b></a>
+{% endif %}
+
+{% if has_next %}
+<a href="/forum/forum/{{ forum }}/{{ next }}/"><b> {% trans "Older Topics" %}</b></a>
+{% endif %}
+
+{% ifnotequal pages 0 %}
+{% ifnotequal pages 1 %}
+ | <a href="/forum/forum/{{ forum }}/{{ pages }}/"><b>{% trans "Oldest Topics" %}</b></a>
+{% endifnotequal %}
+{% endifnotequal %}
+<br />
+{% if perms.add_topic %}
+	<p style="text-align:right;"><a href="/forum/add_topic/{{ forum }}/"><b>{% trans "Add New Topic" %}</b></a></p>
+{% endif %}
+</div>
+<div class="box">
+<p style="text-align:right;">
+	{% if perms.add_topic %}
+		- {% trans "You can post new Topics" %}<br />
+	{% else %}
+		- {% trans "You can't post new Topics" %}<br />
+	{% endif %}
+	{% if perms.add_post %}
+		- {% trans "You can post new Posts" %}<br />
+	{% else %}
+		- {% trans "You can't post new Posts" %}<br />
+	{% endif %}
+	{% if perms.is_staff %}
+		- {% trans "You can moderate this Topics" %}<br />
+	{% else %}
+		-  {% trans "You can't moderate this Topics" %}<br />
+	{% endif %}
+</p></div>
+{% endblock %}

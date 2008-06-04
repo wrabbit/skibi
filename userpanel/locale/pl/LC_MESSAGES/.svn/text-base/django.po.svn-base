@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: userpanel\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-09-02 15:58+0200\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: views.py:37
+msgid "Captcha Error."
+msgstr "Błąd Captcha."
+
+#: views.py:40
+msgid "Login to short"
+msgstr "Za krótki login"
+
+#: views.py:43
+msgid "Password to short"
+msgstr "Za krótkie hasło"
+
+#: views.py:46 views.py:252
+msgid "Passwords do not match"
+msgstr "Hasła nie zgadzają się"
+
+#: views.py:53
+msgid "Login already taken"
+msgstr "Logij już zajęty"
+
+#: views.py:60
+msgid "Email already taken"
+msgstr "Email zajęty"
+
+#: views.py:172
+msgid "This user doesn't want to receive any messages"
+msgstr "Ten użytkownik nie chce otrzymywać wiadomości"
+
+#: views.py:226 views.py:260
+msgid "ROTFL LOL OMG CSS :)"
+msgstr "ROTFL LOL OMG CSS :)"
+
+#: views.py:230
+msgid "No such user account"
+msgstr "Brak takiego użytkownika w bazie danych"
+
+#: views.py:235
+msgid "Password reset"
+msgstr "Resetowanie Hasła"
+
+#: views.py:235
+msgid "Your new password on rk.edu.pl sites is: "
+msgstr "Twoje nowe hasło w serwisach rk.edu.pl to: "
+
+#: views.py:255
+msgid "To short"
+msgstr "Za krótkie"
+
+#: templates/userpanel/login.html:4
+msgid "Log in"
+msgstr "Zaloguj Się"
+
+#: templates/userpanel/login.html:6
+msgid "Login Error - bad login and/or password"
+msgstr "Błąd Logowania - zły login i/lub hasło"
+
+#: templates/userpanel/login.html:9
+msgid "A email with the new password has been send."
+msgstr "Email wraz z nowym hasłem został wysłany."
+
+#: templates/userpanel/login.html:14 templates/userpanel/login.html.py:23
+#: templates/userpanel/register.html:11 templates/userpanel/userlist.html:8
+msgid "Login"
+msgstr "Login"
+
+#: templates/userpanel/login.html:18 templates/userpanel/register.html:15
+msgid "Password"
+msgstr "Hasło"
+
+#: templates/userpanel/login.html:24 templates/userpanel/register.html:4
+msgid "Register"
+msgstr "Rejestracja"
+
+#: templates/userpanel/login.html:25
+msgid "Forgotten Password"
+msgstr "Zapomniane Hasło"
+
+#: templates/userpanel/login.html:31 templates/userpanel/panel.html:18
+#: templates/userpanel/pmessage.html:20 templates/userpanel/register.html:37
+#: templates/userpanel/userlist.html:28
+msgid "Home"
+msgstr "Strona Główna"
+
+#: templates/userpanel/login.html:31 templates/userpanel/panel.html:18
+#: templates/userpanel/pmessage.html:20 templates/userpanel/register.html:37
+#: templates/userpanel/userlist.html:28
+msgid "User Panel"
+msgstr "Panel Użytkownika"
+
+#: templates/userpanel/panel.html:5
+msgid "User Profile"
+msgstr "Profil Użytkownika"
+
+#: templates/userpanel/panel.html:8
+msgid "Logout"
+msgstr "Wyloguj"
+
+#: templates/userpanel/panel.html:9
+msgid "Messages Settings"
+msgstr "Ustawienia Wiadomości-Emaili"
+
+#: templates/userpanel/panel.html:10 templates/userpanel/zmessage.html:4
+#: templates/userpanel/zmessage.html:17
+msgid "Change Password"
+msgstr "Zmień Hasło"
+
+#: templates/userpanel/panel.html:13
+msgid "User List"
+msgstr "Lista Użytkowników"
+
+#: templates/userpanel/panel.html:14
+msgid "Contact Site Admin"
+msgstr "Kontakt z Adminem"
+
+#: templates/userpanel/pmessage.html:4
+msgid "Send a Private Message"
+msgstr "Wyślij Wiadomość"
+
+#: templates/userpanel/pmessage.html:8
+msgid "Subject"
+msgstr "Temat"
+
+#: templates/userpanel/pmessage.html:12
+msgid "Text"
+msgstr "Treść"
+
+#: templates/userpanel/pmessage.html:17 templates/userpanel/userlist.html:14
+msgid "Send Message"
+msgstr "Wyślij Wiadomość"
+
+#: templates/userpanel/register.html:6
+msgid "Registration Error"
+msgstr "Błąd Rejestracji"
+
+#: templates/userpanel/register.html:11
+msgid "required, more than 3 chars<br />letters or numbers"
+msgstr "wymagane, więcej niż 3 znaki<br />litery lub liczby"
+
+#: templates/userpanel/register.html:15
+msgid "required, more than 4 chars<br />letters or numbers"
+msgstr "wymagane, więcej niż 4 znaki<br />litery lub liczby"
+
+#: templates/userpanel/register.html:19
+msgid "Password Again"
+msgstr "Hasło Ponownie"
+
+#: templates/userpanel/register.html:19
+msgid "required, enter the same password"
+msgstr "wymagane, wprowadź to samo hasło"
+
+#: templates/userpanel/register.html:23
+msgid "Email"
+msgstr "Email"
+
+#: templates/userpanel/register.html:23
+msgid "required, your email addres"
+msgstr "wymagane, podaj swój adres email"
+
+#: templates/userpanel/register.html:27
+msgid "Text from the image"
+msgstr "Tekst z grafiki"
+
+#: templates/userpanel/register.html:33
+msgid "Register My"
+msgstr "Zarejestruj Mnie"
+
+#: templates/userpanel/userlist.html:4
+msgid "Users List"
+msgstr "Lista Użytkowników"
+
+#: templates/userpanel/userlist.html:9
+msgid "Actions"
+msgstr "Akcje"
+
+#: templates/userpanel/profile_pmessage.html:11
+msgid "Allow messages from users"
+msgstr "Zezwól na wiadomości od użytkowników"
+
+#: templates/userpanel/profile_pmessage.html:16
+msgid "Save"
+msgstr "Zapisz"
+
+#: templates/userpanel/hmessage.html:4
+msgid "Change Forgotten Password"
+msgstr "Zmień Zapomniane Hasło"
+
+#: templates/userpanel/hmessage.html:8
+msgid "Your Login"
+msgstr "Twój Login"
+
+#: templates/userpanel/hmessage.html:12
+msgid "Your Registration Email"
+msgstr "Email z rejestracji"
+
+#: templates/userpanel/hmessage.html:17
+msgid "Reset Password"
+msgstr "Resetuj Hasło"
+
+#: templates/userpanel/zmessage.html:8
+msgid "New Password"
+msgstr "Nowe Hasło"
+
+#: templates/userpanel/zmessage.html:12
+msgid "New Password Again"
+msgstr "Nowe Hasło Ponownie"
+
+#~ msgid "(Use CAPITAL letters)"
+#~ msgstr "(Użyj DUŻYCH liter)"
+
+#~ msgid "Permission Denied"
+#~ msgstr "Brak Dostępu"
+
+#~ msgid "No such profile"
+#~ msgstr "Brak profilu użytkownika"
+
+#~ msgid "Edit Profile"
+#~ msgstr "Edytuj Profil"
+
+#~ msgid "Public Email"
+#~ msgstr "Publiczny Email"
+
+#~ msgid "Public Informations"
+#~ msgstr "Publiczne Informacje"
+
+#~ msgid "Allowed HTML Tags"
+#~ msgstr "Dozwolone tagi HTML"
+
+#~ msgid "Signature"
+#~ msgstr "Podpis"
+
+#~ msgid "Contacts"
+#~ msgstr "Kontakty"
+
+#~ msgid "Save Changes"
+#~ msgstr "Zapisz Zmiany"
+
+#~ msgid "Log Out"
+#~ msgstr "Wyloguj"
+
+#~ msgid "User Topics"
+#~ msgstr "Tematy Użytkownika"
+
+#~ msgid "User Posts"
+#~ msgstr "Posty Użytkownika"
+
+#~ msgid "Public Info"
+#~ msgstr "Publiczne Informacje"
+
+#~ msgid "Show Profile"
+#~ msgstr "Pokaż Profil"
+
+#~ msgid "- You can set pages as current"
+#~ msgstr "- Twoje zmiany będą od razu widoczne na stronie"
+
+#~ msgid "- You can't set pages as current"
+#~ msgstr ""
+#~ "- Wprowadzone przez ciebie zmiany pojawią się na stronie po zatwierdzeniu "
+#~ "przez administratora"
+
+#~ msgid "- You can add pages"
+#~ msgstr "- Możesz dodawać nowe strony"
+
+#~ msgid "- You can't add pages"
+#~ msgstr "- Nie możesz dodawać stron"
+
+#~ msgid "- You can edit pages"
+#~ msgstr "- Możesz edytować strony"
+
+#~ msgid "- You can't edit pages"
+#~ msgstr "- Nie możesz edytować stron"
+
+#~ msgid "REGISTER FORM"
+#~ msgstr "REJESTRACJA"
+
+#~ msgid "Is Staff"
+#~ msgstr "W Zespole"

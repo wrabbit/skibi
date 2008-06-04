@@ -1,0 +1,20 @@
+{% extends "base_tresc.html" %}
+{% block content %}
+{% load i18n %}
+<style type="text/css">
+td li { display: inline;padding:30px;}
+</style>
+<br><form method="post" action=".">
+<table border=0 class='table_user'>
+<th colspan=2 class='user1'><b>{{uczen.get_full_name}}</b><a href="/{{uczen.id}}/sprawdz/uwagi/" style="padding-left:100px;color:white;text-decoration:underline;'">{% trans 'Wyświetl uwagi' %}</a></th>
+<tr><td><br></td></tr>
+<tr>
+	</td>
+    <td>{{ f.typ }}{% if f.typ.errors %}<div id='img_error'>{{ f.typ.errors|join:", "}}</div></td>{% endif %}
+</tr><tr>
+	 <td>{{ f.tresc }}{% if f.tresc.errors %}<div id='img_error'>{{ f.tresc.errors|join:", "}}</div></td>{% endif %}
+</tr>
+<tr><td><input type="submit" value="Zapisz" id="addcomm"></td></tr>
+</table></form>
+
+{% endblock %}

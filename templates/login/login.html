@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+<title>Dziennik elektroniczny</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Dziennik elektroniczny" />
+<meta name="keywords" content="e-dziennik,dziennik elektroniczny,szkoła,nauka,internet,e-oceny" />
+<link href="/site_media/css/login.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body class="waterbody">
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/site_media/css/login_ie6.css" media="screen" />
+<![endif]-->
+
+<div id="container">
+	<div id="containerbg">
+		<div id="outerleft">
+			<!-- start logo -->
+			<div id="logo">
+			<table border='0' width='50%' cellspacing='10' cellpadding='0' bgcolor='white'>
+			<tr>
+			  <td><a href="http://www.wisz.edu.pl"><img src="/site_media/images/wisz1.jpg" alt="header image" border='0' /></a></td>
+			  <td><img src="/site_media/images/komp.jpg" alt="header image" border='0' /></td>
+			</tr>
+			</table>
+			</div>
+			<!-- end logo -->
+			<!-- start top menu. position:top -->
+
+			<!-- end top menu. position:top -->
+			<!-- start image header -->
+			<div id="imgheader">
+			System wspomagający pracę<br />nauczyciela
+			E-DZIENNIK
+			<!--<img src="/site_media/images/gora.png" alt="header image" style="margin-top:5px;margin-bottom:0px;margin-left:5px;" border=0>-->
+			</div>
+			<!-- end image header -->
+			<div id="container_inner">
+				<!-- start left column.position:left,user1 -->
+				
+				<div id="leftcol">
+				<p>Logowanie :</p>
+				<form action="/loged/" method="post" name="logowanie">
+				
+				Login<br/><input name="username" type="text" class="inputbox" size="12" />			
+				<br/>Hasło<br/><input type="password" name="passwd" class="inputbox" size="12" />
+				<br/>{% block rejestruj %}{% endblock %}<input type="submit" name="Submit" class="button" value="ZALOGUJ" />
+				
+				</form>
+		      <!--
+				<p>Praca inżynierska :</p>
+				<ul>
+				<li>wykonał : <br>&nbsp;&nbsp;&nbsp; Marcin Straszyński</b></li>
+				<li>promotor: <br>&nbsp;&nbsp;&nbsp; dr Janusz Jabłoński</b></li>
+				</u>
+			
+                                -->
+				</div>
+				<!-- end left column.position:left -->
+				<div id="content_top_wrapper">
+					<!-- start content top 1. position:user2 -->
+					<div id="content_top1">
+					E-dziennik - Wersja demonstracyjna
+					</div>
+				</div>
+				<!-- end content top wrapper -->
+				<!-- start main body -->
+				<div id="content_main">
+			    {% block demo %}{% endblock %}
+				</div>
+			</div>
+		</div>
+
+		<div id="blackline">
+		[ Wyższa Informatyczna Szkoła Zawodowa w Gorzowie Wlkp ]
+		</div>
+		
+	</div>
+	<!-- copyright notice -->
+	<div id="copyright">
+	system e-dziennik 
+	</div>
+
+</div>
+
+
+</body>
+</html>
