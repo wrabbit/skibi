@@ -30,3 +30,7 @@ def nieobecnosci_szczegoly(request,uczen_id):
     header = 'Nieobecności ucznia w dniu %s' % '%s'%n[0].data
     return render_to_response('nb_ucznia_szczegoly.html',{'n':n,'header':header},context_instance=RequestContext(request))
 
+def some_view(request):
+    """testes view"""
+    pass
+
