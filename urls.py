@@ -7,9 +7,6 @@ from django.views.generic.date_based import archive_index,archive_year, archive_
 feeds = {
     'news': LatestNews,
 }
-sitemaps = {
-	'news': NewsMap,
-}
 info_dict={
         'queryset':Klasy.objects.all().order_by('-id'),
         'template_name':'base_tresc.html',
